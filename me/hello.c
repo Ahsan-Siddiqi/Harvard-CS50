@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 int main () {
-    char* input;
-    input = malloc( 20 * sizeof(char));
+    char *input;
+    input = (char*)malloc(20);
     scanf("What's your name? %s", &input);
 
     printf("hello, %s\n", input);
