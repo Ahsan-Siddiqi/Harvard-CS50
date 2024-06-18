@@ -3,7 +3,7 @@
 int main () {
     char input[20];
 
-    scanf("What's your name? ", &input)
+    scanf("What's your name? %s", &input)
 
     printf("hello, %s\n", input);
 
