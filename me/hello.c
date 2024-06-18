@@ -1,12 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string.h>
 
-int main () {
-    char *input;
-    input = (char*)malloc(20);
-    scanf("What's your name? %s", &input);
+int main() {
+    char name[100];
 
-    printf("hello, %s\n", input);
+    printf("What's your name? ");
+    fgets(name, sizeof(name), stdin);
+
+    size_t length = strlen(name);
+    if (length > 0 && name[length - 1] == '\n') {
+        name[length - 1] = '\0';
+    }
+
+    printf("Hello, %s!\n", name);
 
     return 0;
 }
