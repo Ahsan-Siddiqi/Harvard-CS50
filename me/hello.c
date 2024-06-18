@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 int main () {
-    malloc(sizeof(char))
-    scanf(/n, input)
+    char input[20];
+    scanf("What's your name? ", &input)
+
+    printf("hello, "+ n, input);
+
     return 0;
 }
