@@ -4,6 +4,8 @@ int main() {
 
     char input1[100];
     char input2[100];
+    int result1, result2;
+
 
     // letter values
     int a, e, i, l, n, o, r, s, t, u = 1;
@@ -25,8 +27,10 @@ int main() {
     // winner
     for (int i = 0; i < sizeof(input1); i++) {
         switch (input1[i]) {
-            case 'a':
-
+            case 'd' || 'g':
+                result1 += 2;
+                break;
+            case 'b' || 'c' || 'm' || 
         }
     }
 
