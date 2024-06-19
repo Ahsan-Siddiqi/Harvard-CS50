@@ -20,19 +20,19 @@ int main() {
             case 'd' | 'g':
                 result1 += 2;
                 break;
-            case 'b' | 'c' | 'm' | 'p':
+            case 'b' || 'c' || 'm' || 'p':
                 result1 += 3;
                 break;
-            case 'f' | 'h' | 'v' | 'w' | 'y':
+            case 'f' || 'h' || 'v' || 'w' || 'y':
                 result1 += 4;
                 break;
             case 'k':
                 result1 += 5;
                 break;
-            case 'j' | 'x':
+            case 'j' || 'x':
                 result1 += 8;
                 break;
-            case 'q' | 'z':
+            case 'q' || 'z':
                 result1 += 10;
                 break;
             default:
