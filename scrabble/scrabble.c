@@ -4,7 +4,7 @@ int main() {
 
     char input1[100];
     char input2[100];
-    int result1, result2;
+    int result1, result2 = 0;
 
     // input
     printf("Player 1: ");
@@ -15,7 +15,7 @@ int main() {
 
 
     // calculate
-    for (int i = 0; i < sizeof(input1); i++) {
+    for (int i = 0; i < strlen(input1); i++) {
         switch (input1[i]) {
             case 'd' | 'g':
                 result1 += 2;
@@ -40,8 +40,8 @@ int main() {
         }
     }
 
-        for (int i = 0; i < sizeof(input2); i++) {
-        switch (input1[i]) {
+        for (int i = 0; i < strlen(input2); i++) {
+        switch (input2[i]) {
             case 'd' || 'g':
                 result2 += 2;
                 break;
