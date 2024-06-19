@@ -5,7 +5,7 @@ int main() {
 
     char input1[100];
     char input2[100];
-    int result1, result2 = 0;
+    int result1 = 0, result2 = 0;
 
     // input
     printf("Player 1: ");
@@ -99,11 +99,11 @@ int main() {
 
     // print winner
     if (result1 > result2) {
-        printf("Player 1 wins!");
+        printf("Player 1 wins!\n");
     } else if (result2 > result1) {
-        printf("Player 2 wins!");
+        printf("Player 2 wins!\n");
     } else {
-        printf("Tie!");
+        printf("Tie!\n");
     }
 
     return 0;
