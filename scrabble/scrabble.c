@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
@@ -26,24 +27,34 @@ int main() {
 
 
     // calculate
-    for (int i = 0; i < strlen(input1); i++) {
+     for (int i = 0; i < strlen(input1); i++) {
         switch (input1[i]) {
-            case 'd' | 'g':
+            case 'd':
+            case 'g':
                 result1 += 2;
                 break;
-            case 'b' || 'c' || 'm' || 'p':
+            case 'b':
+            case 'c':
+            case 'm':
+            case 'p':
                 result1 += 3;
                 break;
-            case 'f' || 'h' || 'v' || 'w' || 'y':
+            case 'f':
+            case 'h':
+            case 'v':
+            case 'w':
+            case 'y':
                 result1 += 4;
                 break;
             case 'k':
                 result1 += 5;
                 break;
-            case 'j' || 'x':
+            case 'j':
+            case 'x':
                 result1 += 8;
                 break;
-            case 'q' || 'z':
+            case 'q':
+            case 'z':
                 result1 += 10;
                 break;
             default:
