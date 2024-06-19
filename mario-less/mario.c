@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int main() {
     int height;
@@ -7,7 +8,7 @@ int main() {
     do {
         printf("Height: ");
         scanf("%d", &height);
-    } while (height < 1 || typeof(height) != int);
+    } while (height < 1 || !isdigit(height));
 
 
     for (int i= 0; i<height; i++) {
