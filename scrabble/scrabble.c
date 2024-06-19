@@ -51,24 +51,34 @@ int main() {
         }
     }
 
-        for (int i = 0; i < strlen(input2); i++) {
+    for (int i = 0; i < strlen(input2); i++) {
         switch (input2[i]) {
-            case 'd' || 'g':
+            case 'd':
+            case 'g':
                 result2 += 2;
                 break;
-            case 'b' || 'c' || 'm' || 'p':
+            case 'b':
+            case 'c':
+            case 'm':
+            case 'p':
                 result2 += 3;
                 break;
-            case 'f' || 'h' || 'v' || 'w' || 'y':
+            case 'f':
+            case 'h':
+            case 'v':
+            case 'w':
+            case 'y':
                 result2 += 4;
                 break;
             case 'k':
                 result2 += 5;
                 break;
-            case 'j' || 'x':
+            case 'j':
+            case 'x':
                 result2 += 8;
                 break;
-            case 'q' || 'z' = 10;
+            case 'q':
+            case 'z':
                 result2 += 10;
                 break;
             default:
