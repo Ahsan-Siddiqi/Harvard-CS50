@@ -3,5 +3,5 @@
 int main() {
     int height;
 
-    fgets(height)
+    scanf("%d", &height);
 }
