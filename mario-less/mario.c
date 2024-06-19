@@ -8,8 +8,12 @@ int main() {
     scanf("%d", &height);
 
     for (int i= 0; i<height; i++) {
-        for (int j=1; j<=i; j++) {
-            
+        for (int j=0; j<i; j++) {
+            if(j<height) {
+                printf(" ");
+            } else {
+                printf("%c", tag);
+            }
         }
         printf("\n");
     }
