@@ -8,7 +8,10 @@ int main() {
     scanf("%d", &height);
 
     for (int i= 0; i<height; i++) {
-        for (int j=0; i<i;)
+        for (int j=1; j<=i; j++) {
+            printf("#");
+        }
+        printf("\n");
     }
     return 0;
 }
