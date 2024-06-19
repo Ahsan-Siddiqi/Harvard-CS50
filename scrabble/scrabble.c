@@ -8,10 +8,10 @@ int main() {
 
     // input
     printf("Player 1: ");
-    scanf("%s", &input1);
+    fgets(input1, sizeof(input1), stdin);
 
     printf("Player 2: ");
-    scanf("%s", &input2);
+    fgets(input2, sizeof(input2), stdin);
 
 
     // calculate
