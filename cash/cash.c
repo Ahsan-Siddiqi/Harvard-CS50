@@ -1,8 +1,9 @@
 #include <stdio.h>
 
-int main() {
-    int penny, dime, nickel, quarter;
-    int temp, owed;
+int main()
+{
+
+    int coins = 0, temp, owed;
 
     // grab (correct) input
     do
@@ -11,26 +12,35 @@ int main() {
         temp = scanf("%d", &owed);
 
         // clear input buffer on failure
-        while (getchar() != '\n');
+        while (getchar() != '\n')
+            ;
     }
-    while (height < 1 || temp != 1);
+    while (owed < 1 || temp != 1);
 
-
-    while(owed != 0) {
-        if (owed - 25 >= 0) {
+    // count coins
+    while (owed != 0)
+    {
+        if (owed - 25 >= 0)
+        {
             owed -= 25;
-            quarter++;
-        } else if (owed - 10 >= 0) {
+            coins++;
+        }
+        else if (owed - 10 >= 0)
+        {
             owed -= 10;
-            nickel++;
-        } else if (owed - 5 >= 0) {
+            coins++;
+        }
+        else if (owed - 5 >= 0)
+        {
             owed -= 5;
-            dime++;
-        } else {
+            coins++;
+        }
+        else
+        {
             owed -= 1;
-            penny++;
+            coins++;
         }
     }
 
-    printf()
+    printf("%d\n", coins);
 }
