@@ -8,7 +8,7 @@ int main() {
     scanf("%d", &height);
 
     for (int i= 0; i<height; i++) {
-        printf("%10c\n", tag);
+        for (int j=0; i<i;)
     }
     return 0;
 }
