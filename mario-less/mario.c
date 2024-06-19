@@ -7,6 +7,7 @@ int main() {
     scanf("%d", &height);
 
     for (int i= 0; i<height; i++) {
-        printf()
+        printf("%10d\n", i);
     }
+    return 0;
 }
