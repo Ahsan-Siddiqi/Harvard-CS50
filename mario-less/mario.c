@@ -8,7 +8,7 @@ int main() {
     do {
         printf("Height: ");
         scanf("%d", &height);
-    } while (height < 1 || !isdigit(height));
+    } while (height < 1 || isdigit(height) == 0);
 
 
     for (int i= 0; i<height; i++) {
