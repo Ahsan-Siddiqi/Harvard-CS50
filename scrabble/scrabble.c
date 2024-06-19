@@ -20,9 +20,9 @@ int main() {
         input1[length - 1] = '\0';
     }
 
-    size_t length = strlen(input2);
-    if (length > 0 && input2[length - 1] == '\n') {
-        input2[length - 1] = '\0';
+    size_t length2 = strlen(input2);
+    if (length2 > 0 && input2[length2 - 1] == '\n') {
+        input2[length2 - 1] = '\0';
     }
 
 
@@ -101,7 +101,7 @@ int main() {
     if (result1 > result2) {
         printf("Player 1 wins!");
     } else if (result2 > result1) {
-        printf("Player 2 wins!")
+        printf("Player 2 wins!");
     } else {
         printf("Tie!");
     }
