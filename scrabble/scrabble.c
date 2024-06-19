@@ -14,7 +14,7 @@ int main() {
     printf("Player 2: ");
     fgets(input2, sizeof(input2), stdin);
 
-    // remove newline
+    // remove newline and uppercase
     size_t length = strlen(input1);
     if (length > 0 && input1[length - 1] == '\n') {
         input1[length - 1] = '\0';
@@ -25,6 +25,8 @@ int main() {
         input2[length2 - 1] = '\0';
     }
 
+    input1.lower();
+    input2.lower();
 
     // calculate
      for (int i = 0; i < strlen(input1); i++) {
@@ -58,7 +60,7 @@ int main() {
                 result1 += 10;
                 break;
             default:
-                result1 += 1;
+                break;
         }
     }
 
