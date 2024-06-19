@@ -4,8 +4,11 @@ int main() {
     int height;
     char tag = '#';
 
-    printf("Height: ");
-    scanf("%d", &height);
+    do {
+        printf("Height: ");
+        scanf("%d", &height);
+    } while (height < 1 || typeof(height) != int);
+
 
     for (int i= 0; i<height; i++) {
         for (int j=1; j<=height; j++) {
