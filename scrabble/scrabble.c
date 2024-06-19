@@ -25,8 +25,8 @@ int main() {
     // winner
     for (int i = 0; i < sizeof(input1); i++) {
         switch (input1[i]) {
-            case i == 'a':
-                
+            case 'a':
+
         }
     }
 
