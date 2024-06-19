@@ -13,6 +13,17 @@ int main() {
     printf("Player 2: ");
     fgets(input2, sizeof(input2), stdin);
 
+    // remove newline
+    size_t length = strlen(input1);
+    if (length > 0 && input1[length - 1] == '\n') {
+        input1[length - 1] = '\0';
+    }
+
+    size_t length = strlen(input2);
+    if (length > 0 && input2[length - 1] == '\n') {
+        input2[length - 1] = '\0';
+    }
+
 
     // calculate
     for (int i = 0; i < strlen(input1); i++) {
