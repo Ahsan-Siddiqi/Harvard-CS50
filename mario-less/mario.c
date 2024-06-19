@@ -3,12 +3,16 @@
 
 int main() {
     int height;
+    int temp;
     char tag = '#';
+
 
     do {
         printf("Height: ");
-        scanf("%d", &height);
-    } while (height < 1 || isdigit(height) == 0);
+        temp = scanf("%d", &height);
+        while (getchar() != '\n');
+        
+    } while (height < 1 || temp != 1);
 
 
     for (int i= 0; i<height; i++) {
