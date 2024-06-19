@@ -6,16 +6,6 @@ int main() {
     char input2[100];
     int result1, result2;
 
-
-    // letter values
-    int a, e, i, l, n, o, r, s, t, u = 1;
-    int d, g = 2;
-    int b, c, m, p = 3;
-    int f, h, v, w, y = 4;
-    int k = 5;
-    int j, x = 8;
-    int q, z = 10;
-
     // input
     printf("Player 1: ");
     scanf("%s", &input1);
@@ -24,14 +14,64 @@ int main() {
     scanf("%s", &input2);
 
 
-    // winner
+    // calculate
     for (int i = 0; i < sizeof(input1); i++) {
         switch (input1[i]) {
             case 'd' || 'g':
                 result1 += 2;
                 break;
-            case 'b' || 'c' || 'm' || 
+            case 'b' || 'c' || 'm' || 'p':
+                result1 += 3;
+                break;
+            case 'f' || 'h' || 'v' || 'w' || 'y':
+                result1 += 4;
+                break;
+            case 'k':
+                result1 += 5;
+                break;
+            case 'j' || 'x':
+                result1 += 8;
+                break;
+            case 'q' || 'z' = 10;
+                result1 += 10;
+                break;
+            default:
+                result1 += 1;
         }
+    }
+
+        for (int i = 0; i < sizeof(input2); i++) {
+        switch (input1[i]) {
+            case 'd' || 'g':
+                result2 += 2;
+                break;
+            case 'b' || 'c' || 'm' || 'p':
+                result2 += 3;
+                break;
+            case 'f' || 'h' || 'v' || 'w' || 'y':
+                result2 += 4;
+                break;
+            case 'k':
+                result2 += 5;
+                break;
+            case 'j' || 'x':
+                result2 += 8;
+                break;
+            case 'q' || 'z' = 10;
+                result2 += 10;
+                break;
+            default:
+                result2 += 1;
+        }
+    }
+
+    // print winner
+    if (result1 > result2) {
+        printf("Player 1 wins!");
+    } else if (result2 > result1) {
+        printf("Player 2 wins!")
+    } else {
+        printf("Tie!");
     }
 
     return 0;
