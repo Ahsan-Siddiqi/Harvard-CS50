@@ -9,7 +9,7 @@ int main() {
 
     for (int i= 0; i<height; i++) {
         for (int j=1; j<=i; j++) {
-            printf(" %*c ", j, tag);
+            printf("%c", j, tag);
         }
         printf("\n");
     }
