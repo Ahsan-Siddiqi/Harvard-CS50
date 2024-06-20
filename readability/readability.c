@@ -17,9 +17,9 @@ int main() {
 
     // scan input
     for (int i = 0; i < strlen(input); i++) {
-        if (strcmp()) {
+        if (strcmp(input[i], " ")) {
             words++;
-        } else if (i == ".") {
+        } else if (strcmp(input[i], ".") || ) {
             sentances++;
         } else {
 
