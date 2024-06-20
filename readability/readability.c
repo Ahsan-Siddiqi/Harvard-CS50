@@ -4,10 +4,12 @@
 int main() {
     char input[];
     int *letterCount[];
-    int *sentenceCount[];
+    int *sentanceCount[];
     int L, S, words = 0, sentances = 0, letters = 0;
 
-    letterCount = malloc(sizeof(int) * )
+    letterCount = malloc(sizeof(int) * 100);
+    sentanceCount = malloc(sizeof(int) * 100);
+
 
     // input
     printf("Text: ");
@@ -18,6 +20,7 @@ int main() {
     {
         input[length - 1] = '\0';
     }
+
 
     // scan input
     for (int i = 0; i < strlen(input); i++) {
