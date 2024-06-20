@@ -61,6 +61,18 @@ int main() {
             case 'z':
                 result1 += 10;
                 break;
+              case 'a':
+            case 'e':
+            case 'i':
+            case 'l':
+            case 'n':
+            case 'o':
+            case 'r':
+            case 's':
+            case 't':
+            case 'u':
+                result1 += 1;
+                break;
             default:
                 break;
         }
@@ -96,8 +108,20 @@ int main() {
             case 'z':
                 result2 += 10;
                 break;
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'l':
+            case 'n':
+            case 'o':
+            case 'r':
+            case 's':
+            case 't':
+            case 'u':
+                result1 += 1;
+                break;
             default:
-                result2 += 1;
+                break;
         }
     }
 
