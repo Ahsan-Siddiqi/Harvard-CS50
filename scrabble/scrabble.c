@@ -25,7 +25,7 @@ int main() {
         input2[length2 - 1] = '\0';
     }
 
-    input1.lower();
+    tolower()
     input2.lower();
 
     // calculate
