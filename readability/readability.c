@@ -3,6 +3,8 @@
 
 int main() {
     char input[];
+    int letterCount[];
+    int sentenceCount[];
     int L, S, words = 0, sentances = 0, letters = 0;
 
     // input
@@ -20,7 +22,7 @@ int main() {
         if (strcmp(input[i], " ")) {
             words++;
             if (words >= 100) {
-                
+
             }
         } else if (strcmp(input[i], ".") || strcmp(input[i], "?") ||strcmp(input[i], "!")) {
             sentances++;
