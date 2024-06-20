@@ -3,9 +3,11 @@
 
 int main() {
     char input[];
-    int letterCount[];
-    int sentenceCount[];
+    int *letterCount[];
+    int *sentenceCount[];
     int L, S, words = 0, sentances = 0, letters = 0;
+
+    letterCount = malloc(sizeof(int) * )
 
     // input
     printf("Text: ");
