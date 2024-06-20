@@ -3,7 +3,7 @@
 
 int main() {
     char input[];
-    int L, S;
+    int L, S, words = 0, sentances = 0;
 
     // input
     printf("Text: ");
@@ -16,7 +16,15 @@ int main() {
     }
 
     // get avg letters/100 words and avg sentences/100 words
-    L = spaces 
+    for (int i = 0; i < strlen(input); i++) {
+        if (i == " ") {
+            words++;
+        } else if (i == ".") {
+            sentacnes++;
+        } else {
+            
+        }
+    }
 
     return 0;
 }
