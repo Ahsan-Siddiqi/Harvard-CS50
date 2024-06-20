@@ -15,12 +15,12 @@ int main() {
         input[length - 1] = '\0';
     }
 
-    // get avg letters/100 words and avg sentences/100 words
+    // scan input
     for (int i = 0; i < strlen(input); i++) {
         if (i == " ") {
             words++;
         } else if (i == ".") {
-            sentacnes++;
+            sentances++;
         } else {
             
         }
