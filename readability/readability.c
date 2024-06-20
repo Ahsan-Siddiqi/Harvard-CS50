@@ -19,13 +19,13 @@ int main() {
     // scan input
     for (int i = 0; i < strlen(input); i++) {
         char c = input[i];
-        if (c == " ") {
+        if (c == ' ') {
             words++;
             if (words >= 100) {
                 wordChunks++;
                 words = 0;
             }
-        } else if (c == "." || c == "?" || c == "!") {
+        } else if (c == '.' || c == '?' || c == '!') {
             sentances++;
             words++;
             if (words >= 100) {
@@ -42,7 +42,7 @@ int main() {
 
 
     // calcuate index
-    int index = 0.0588 * L - 0.296 *s -15.8;
+    float index = 0.0588 * L - 0.296 * S -15.8;
 
     // print result
     if (index < 1) {
@@ -50,7 +50,7 @@ int main() {
     } else if (index >= 16){
         printf("Grade 16+");
     } else {
-        printf("Grade %d", index);
+        printf("Grade %f", index);
     }
 
     return 0;
