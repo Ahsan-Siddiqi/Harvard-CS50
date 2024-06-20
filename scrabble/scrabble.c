@@ -25,7 +25,7 @@ int main() {
         input2[length2 - 1] = '\0';
     }
 
-    
+    for ( ; *p; ++p) *p = tolower(*p);
 
     // calculate
      for (int i = 0; i < strlen(input1); i++) {
