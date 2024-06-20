@@ -3,7 +3,6 @@
 
 int main() {
     char input[];
-    char punc = [".", "!", "?"];
     int L, S, words = 0, sentances = 0;
 
     // input
@@ -20,7 +19,7 @@ int main() {
     for (int i = 0; i < strlen(input); i++) {
         if (strcmp(input[i], " ")) {
             words++;
-        } else if (strcmp(input[i], ".") || ) {
+        } else if (strcmp(input[i], ".") || strcmp(input[i], "?") ||strcmp(input[i], "!")) {
             sentances++;
         } else {
 
