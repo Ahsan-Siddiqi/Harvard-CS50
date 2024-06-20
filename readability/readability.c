@@ -17,12 +17,12 @@ int main() {
 
     // scan input
     for (int i = 0; i < strlen(input); i++) {
-        if (i == " ") {
+        if (strcmp()) {
             words++;
         } else if (i == ".") {
             sentances++;
         } else {
-            
+
         }
     }
 
