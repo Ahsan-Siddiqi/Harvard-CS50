@@ -1,11 +1,14 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
 
-int calculate_score(char *input) {
+int calculate_score(char *input)
+{
     int score = 0;
-    for (int i = 0; i < strlen(input); i++) {
-        switch (input[i]) {
+    for (int i = 0; i < strlen(input); i++)
+    {
+        switch (input[i])
+        {
             case 'd':
             case 'g':
                 score += 2;
@@ -53,7 +56,8 @@ int calculate_score(char *input) {
     return score;
 }
 
-int main() {
+int main()
+{
 
     char input1[100];
     char input2[100];
@@ -68,30 +72,39 @@ int main() {
 
     // remove newline and uppercase
     size_t length = strlen(input1);
-    if (length > 0 && input1[length - 1] == '\n') {
+    if (length > 0 && input1[length - 1] == '\n')
+    {
         input1[length - 1] = '\0';
     }
 
     size_t length2 = strlen(input2);
-    if (length2 > 0 && input2[length2 - 1] == '\n') {
+    if (length2 > 0 && input2[length2 - 1] == '\n')
+    {
         input2[length2 - 1] = '\0';
     }
 
     char *p1 = input1;
     char *p2 = input2;
-    for ( ; *p1; ++p1) *p1 = tolower(*p1);
-    for ( ; *p2; ++p2) *p2 = tolower(*p2);
+    for (; *p1; ++p1)
+        *p1 = tolower(*p1);
+    for (; *p2; ++p2)
+        *p2 = tolower(*p2);
 
     // calculate
     result1 = calculate_score(input1);
     result2 = calculate_score(input2);
 
     // print winner
-    if (result1 > result2) {
+    if (result1 > result2)
+    {
         printf("Player 1 wins!\n");
-    } else if (result2 > result1) {
+    }
+    else if (result2 > result1)
+    {
         printf("Player 2 wins!\n");
-    } else {
+    }
+    else
+    {
         printf("Tie!\n");
     }
 
