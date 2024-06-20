@@ -61,7 +61,7 @@ int main() {
             case 'z':
                 result1 += 10;
                 break;
-              case 'a':
+            case 'a':
             case 'e':
             case 'i':
             case 'l':
