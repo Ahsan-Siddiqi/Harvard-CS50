@@ -3,6 +3,7 @@
 
 int main() {
     char input[];
+    char punc = [".", "!", "?"];
     int L, S, words = 0, sentances = 0;
 
     // input
