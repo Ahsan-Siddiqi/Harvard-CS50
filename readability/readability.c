@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    char input[];
+    char input[99999];
     int L, S, words = 0, sentances = 0, letters = 0, wordChunks = 0;
 
     // input
