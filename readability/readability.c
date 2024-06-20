@@ -3,13 +3,7 @@
 
 int main() {
     char input[];
-    int *letterCount[];
-    int *sentanceCount[];
     int L, S, words = 0, sentances = 0, letters = 0, wordChunks = 0;
-
-    letterCount = malloc(sizeof(int) * 100);
-    sentanceCount = malloc(sizeof(int) * 100);
-
 
     // input
     printf("Text: ");
@@ -41,6 +35,13 @@ int main() {
             letters++;
         }
     }
+
+    L = letters / wordChunks;
+    S = sentances / wordChunks;
+
+
+    // calcuate index
+    
 
     return 0;
 }
