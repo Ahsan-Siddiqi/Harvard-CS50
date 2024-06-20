@@ -3,7 +3,7 @@
 
 int main() {
     char input[99999];
-    int L, S, words = 0, sentances = 0, letters = 0, wordChunks = 0;
+    int words = 0, sentances = 0, letters = 0, wordChunks = 0;
 
     // input
     printf("Text: ");
@@ -18,39 +18,29 @@ int main() {
 
     // scan input
     for (int i = 0; i < strlen(input); i++) {
-        char c = input[i];
-        if (c == ' ') {
-            words++;
-            if (words >= 100) {
-                wordChunks++;
-                words = 0;
-            }
-        } else if (c == '.' || c == '?' || c == '!') {
-            sentances++;
-            words++;
-            if (words >= 100) {
-                wordChunks++;
-                words = 0;
-            }
-        } else {
+         char c = input[i];
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             letters++;
+        } else if (c == ' ') {
+            words++;
+        } else if (c == '.' || c == '!' || c == '?') {
+            sentances++;
         }
     }
 
-    L = letters / wordChunks;
-    S = sentances / wordChunks;
-
+    float L = (float)letters / words * 100;
+    float S = (float)sentances / words * 100;
 
     // calcuate index
-    float index = 0.0588 * L - 0.296 * S -15.8;
+    int index = 0.0588 * L - 0.296 * S -15.8;
 
     // print result
     if (index < 1) {
-        printf("Before Grade 1");
+        printf("Before Grade 1\n");
     } else if (index >= 16){
-        printf("Grade 16+");
+        printf("Grade 16+\n");
     } else {
-        printf("Grade %f", index);
+        printf("Grade %f\n", index);
     }
 
     return 0;
