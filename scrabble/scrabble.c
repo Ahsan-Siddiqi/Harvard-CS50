@@ -119,7 +119,7 @@ int main() {
             case 's':
             case 't':
             case 'u':
-                result1 += 1;
+                result2 += 1;
                 break;
             default:
                 break;
