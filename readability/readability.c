@@ -18,13 +18,14 @@ int main() {
 
     // scan input
     for (int i = 0; i < strlen(input); i++) {
-        if (input[i] == " ") {
+        char c = input[i];
+        if (c == " ") {
             words++;
             if (words >= 100) {
                 wordChunks++;
                 words = 0;
             }
-        } else if (input[i] == "." || input[i] == "?" || input[i] == "!") {
+        } else if (c == "." || c == "?" || c == "!") {
             sentances++;
             words++;
             if (words >= 100) {
