@@ -3,7 +3,7 @@
 
 int main() {
     char input[];
-    int L, S, words = 0, sentances = 0;
+    int L, S, words = 0, sentances = 0, letters = 0;
 
     // input
     printf("Text: ");
@@ -18,11 +18,11 @@ int main() {
     // scan input
     for (int i = 0; i < strlen(input); i++) {
         if (strcmp(input[i], " ")) {
-            words++;
+            
         } else if (strcmp(input[i], ".") || strcmp(input[i], "?") ||strcmp(input[i], "!")) {
             sentances++;
         } else {
-
+            letters++;
         }
     }
 
