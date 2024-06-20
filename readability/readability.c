@@ -40,7 +40,7 @@ int main() {
     } else if (index >= 16){
         printf("Grade 16+\n");
     } else {
-        printf("Grade %f\n", index);
+        printf("Grade %d\n", index);
     }
 
     return 0;
