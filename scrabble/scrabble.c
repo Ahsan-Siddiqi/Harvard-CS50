@@ -2,6 +2,57 @@
 #include <string.h>
 #include <ctype.h>
 
+int calculate_score(char *input) {
+    int score = 0;
+    for (int i = 0; i < strlen(input); i++) {
+        switch (input[i]) {
+            case 'd':
+            case 'g':
+                score += 2;
+                break;
+            case 'b':
+            case 'c':
+            case 'm':
+            case 'p':
+                score += 3;
+                break;
+            case 'f':
+            case 'h':
+            case 'v':
+            case 'w':
+            case 'y':
+                score += 4;
+                break;
+            case 'k':
+                score += 5;
+                break;
+            case 'j':
+            case 'x':
+                score += 8;
+                break;
+            case 'q':
+            case 'z':
+                score += 10;
+                break;
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'l':
+            case 'n':
+            case 'o':
+            case 'r':
+            case 's':
+            case 't':
+            case 'u':
+                score += 1;
+                break;
+            default:
+                break;
+        }
+    }
+    return score;
+}
+
 int main() {
 
     char input1[100];
@@ -32,99 +83,8 @@ int main() {
     for ( ; *p2; ++p2) *p2 = tolower(*p2);
 
     // calculate
-     for (int i = 0; i < strlen(input1); i++) {
-        switch (input1[i]) {
-            case 'd':
-            case 'g':
-                result1 += 2;
-                break;
-            case 'b':
-            case 'c':
-            case 'm':
-            case 'p':
-                result1 += 3;
-                break;
-            case 'f':
-            case 'h':
-            case 'v':
-            case 'w':
-            case 'y':
-                result1 += 4;
-                break;
-            case 'k':
-                result1 += 5;
-                break;
-            case 'j':
-            case 'x':
-                result1 += 8;
-                break;
-            case 'q':
-            case 'z':
-                result1 += 10;
-                break;
-            case 'a':
-            case 'e':
-            case 'i':
-            case 'l':
-            case 'n':
-            case 'o':
-            case 'r':
-            case 's':
-            case 't':
-            case 'u':
-                result1 += 1;
-                break;
-            default:
-                break;
-        }
-    }
-
-    for (int i = 0; i < strlen(input2); i++) {
-        switch (input2[i]) {
-            case 'd':
-            case 'g':
-                result2 += 2;
-                break;
-            case 'b':
-            case 'c':
-            case 'm':
-            case 'p':
-                result2 += 3;
-                break;
-            case 'f':
-            case 'h':
-            case 'v':
-            case 'w':
-            case 'y':
-                result2 += 4;
-                break;
-            case 'k':
-                result2 += 5;
-                break;
-            case 'j':
-            case 'x':
-                result2 += 8;
-                break;
-            case 'q':
-            case 'z':
-                result2 += 10;
-                break;
-            case 'a':
-            case 'e':
-            case 'i':
-            case 'l':
-            case 'n':
-            case 'o':
-            case 'r':
-            case 's':
-            case 't':
-            case 'u':
-                result2 += 1;
-                break;
-            default:
-                break;
-        }
-    }
+    result1 = calculate_score(input1);
+    result2 = calculate_score(input2);
 
     // print winner
     if (result1 > result2) {
