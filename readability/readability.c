@@ -5,7 +5,7 @@ int main() {
     char input[];
     int *letterCount[];
     int *sentanceCount[];
-    int L, S, words = 0, sentances = 0, letters = 0;
+    int L, S, words = 0, sentances = 0, letters = 0, wordChunks = 0;
 
     letterCount = malloc(sizeof(int) * 100);
     sentanceCount = malloc(sizeof(int) * 100);
@@ -27,10 +27,16 @@ int main() {
         if (strcmp(input[i], " ")) {
             words++;
             if (words >= 100) {
-
+                wordChunks++;
+                words = 0;
             }
         } else if (strcmp(input[i], ".") || strcmp(input[i], "?") ||strcmp(input[i], "!")) {
             sentances++;
+            words++;
+            if (words >= 100) {
+                wordChunks++;
+                words = 0;
+            }
         } else {
             letters++;
         }
