@@ -18,7 +18,10 @@ int main() {
     // scan input
     for (int i = 0; i < strlen(input); i++) {
         if (strcmp(input[i], " ")) {
-            
+            words++;
+            if (words >= 100) {
+                
+            }
         } else if (strcmp(input[i], ".") || strcmp(input[i], "?") ||strcmp(input[i], "!")) {
             sentances++;
         } else {
