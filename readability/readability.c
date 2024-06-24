@@ -25,6 +25,7 @@ int main() {
             words++;
         } else if (c == '.' || c == '!' || c == '?') {
             sentances++;
+            words++;
         }
     }
 
@@ -32,7 +33,7 @@ int main() {
     float S = (float)sentances / words * 100;
 
     // calcuate index
-    float index = 0.0588 * L - 0.296 * S -15.8;
+    int index = 0.0588 * L - 0.296 * S -15.8;
 
     // print result
     if (index < 1) {
@@ -40,9 +41,9 @@ int main() {
     } else if (index >= 16){
         printf("Grade 16+\n");
     } else {
-        printf("Words: %d\n", words);
-        printf("Sentances: %d\n", sentances);
-        printf("Grade %f\n", index);
+        // printf("Words: %d\n", words);
+        // printf("Sentances: %d\n", sentances);
+        printf("Grade %d\n", index);
     }
 
     return 0;
