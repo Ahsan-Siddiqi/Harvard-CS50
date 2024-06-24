@@ -33,7 +33,7 @@ int main() {
     float S = (float)sentances / words * 100;
 
     // calcuate index
-    int index = 0.0588 * L - 0.296 * S -15.8;
+    int index = 0.0588 * L - 0.296 * S - 15.8;
 
     // print result
     if (index < 1) {
