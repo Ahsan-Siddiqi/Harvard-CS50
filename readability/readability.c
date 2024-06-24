@@ -42,6 +42,7 @@ int main() {
         printf("Grade 16+\n");
     } else {
         printf("Words: %d\n", words);
+        printf("Letters: %d\n", letters);
         printf("Sentances: %d\n", sentances);
         printf("Grade %d\n", index);
     }
