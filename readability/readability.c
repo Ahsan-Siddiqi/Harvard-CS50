@@ -3,48 +3,48 @@
 
 int main() {
     char input[99999];
-    int words = 0, sentances = 0, letters = 0, wordChunks = 0;
+    int words = 1, sentences = 0, letters = 0;
 
     // input
     printf("Text: ");
     fgets(input, sizeof(input), stdin);
 
     size_t length = strlen(input);
-    if (length > 0 && input[length - 1] == '\n')
-    {
+    if (length > 0 && input[length - 1] == '\n') {
         input[length - 1] = '\0';
     }
 
-
     // scan input
     for (int i = 0; i < strlen(input); i++) {
-         char c = input[i];
+        char c = input[i];
         if (c == ' ') {
             words++;
         } else if (c == '.' || c == '!' || c == '?') {
-            sentances++;
-            words++;
-        } else {
+            sentences++;
+        } else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             letters++;
         }
     }
 
+    // Calculate L and S
+    if (words == 0) {
+        printf("Error: No words found in the input.\n");
+        return 1;
+    }
+
     float L = (float)letters / words * 100;
-    float S = (float)sentances / words * 100;
+    float S = (float)sentences / words * 100;
 
-    // calcuate index
-    int index = 0.0588 * L - 0.296 * S - 15.8;
+    // Calculate index
+    float index = 0.0588 * L - 0.296 * S - 15.8;
 
-    // print result
+    // Print result
     if (index < 1) {
         printf("Before Grade 1\n");
-    } else if (index >= 16){
+    } else if (index >= 16) {
         printf("Grade 16+\n");
     } else {
-        // printf("Words: %d\n", words);
-        // printf("Letters: %d\n", letters);
-        // printf("Sentances: %d\n", sentances);
-        printf("Grade %d\n", index);
+        printf("Grade %.0f\n", index);
     }
 
     return 0;
