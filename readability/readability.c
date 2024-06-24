@@ -21,10 +21,10 @@ int main() {
          char c = input[i];
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
             letters++;
+        } else if (c == ' ') {
+            words++;
         } else if (c == '.' || c == '!' || c == '?') {
             sentances++;
-            words++;
-        } else {
             words++;
         }
     }
