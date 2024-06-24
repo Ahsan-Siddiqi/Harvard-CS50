@@ -24,7 +24,6 @@ int main() {
         } else if (c == '.' || c == '!' || c == '?') {
             sentances++;
             words++;
-            letters++;
         } else {
             letters++;
         }
