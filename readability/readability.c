@@ -41,8 +41,8 @@ int main() {
     } else if (index >= 16){
         printf("Grade 16+\n");
     } else {
-        // printf("Words: %d\n", words);
-        // printf("Sentances: %d\n", sentances);
+        printf("Words: %d\n", words);
+        printf("Sentances: %d\n", sentances);
         printf("Grade %d\n", index);
     }
 
