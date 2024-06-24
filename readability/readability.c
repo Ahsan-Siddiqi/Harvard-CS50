@@ -19,13 +19,13 @@ int main() {
     // scan input
     for (int i = 0; i < strlen(input); i++) {
          char c = input[i];
-        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
-            letters++;
-        } else if (c == ' ') {
+        if (c == ' ') {
             words++;
         } else if (c == '.' || c == '!' || c == '?') {
             sentances++;
             words++;
+        } else {
+            letters++;
         }
     }
 
