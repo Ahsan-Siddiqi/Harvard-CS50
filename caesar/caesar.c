@@ -23,10 +23,18 @@ int main (int argc, char** argv) {
         input[length - 1] = '\0';
     }
 
+    // Validate that the key is a digit
+    for (int i = 0; argv[1][i] != '\0'; i++) {
+        if (!isdigit(argv[1][i])) {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
+    }
+
     // manipulate input text
 
-    for (int i = 0; i < length; i++) {
-        input[i] = (input[i] + atoi(argv[2])) % 26;
+    for (int i = 0; i < length - 1; i++) {
+        input[i] = (input[i] + atoi(argv[1])) % 26;
     }
 
     // print result
