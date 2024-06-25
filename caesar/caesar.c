@@ -6,9 +6,13 @@ int main (int argc, char** argv) {
 
     // grab arg input
     do {
+
         // grab input text
-    } while (argc != 2 || );
+
+    } while (argc != 2 || isdigit(argv[2]));
+
     // manipulate input text
+
 
     // print result
 
