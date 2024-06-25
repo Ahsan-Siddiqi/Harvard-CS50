@@ -22,10 +22,12 @@ int main (int argc, char** argv) {
 
     // manipulate input text
 
-    
-
+    for (int i = 0; i < length; i++) {
+        input[i] += argv[2];
+    }
 
     // print result
+    printf("ciphertext: %s", input);
 
     return 0;
 }
