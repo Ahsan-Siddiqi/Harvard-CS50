@@ -8,8 +8,8 @@ int main (int argc, char** argv) {
     char input[99999];
 
     // grab arg input
-    if (argc != 2 || argv[2]) {
-        printf("Usage: ./caesar key");
+    if (argc != 2) {
+        printf("Usage: ./caesar key\n");
         exit(1);
     }
 
@@ -26,11 +26,11 @@ int main (int argc, char** argv) {
     // manipulate input text
 
     for (int i = 0; i < length; i++) {
-        input[i] = (input[i] + argv[2]) % 26;
+        input[i] = (input[i] + atoi(argv[2])) % 26;
     }
 
     // print result
-    printf("ciphertext: %s", input);
+    printf("ciphertext: %s\n", input);
 
     return 0;
 }
