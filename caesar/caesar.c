@@ -29,9 +29,9 @@ int main (int argc, char** argv) {
     fgets(input, sizeof(input), stdin);
 
     size_t length = strlen(input);
-    if (length > 0 && input[length - 1] == '\n')
-    {
+    if (length > 0 && input[length - 1] == '\n') {
         input[length - 1] = '\0';
+        length--;
     }
 
     // manipulate input text
