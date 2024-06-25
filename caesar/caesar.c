@@ -37,7 +37,9 @@ int main (int argc, char** argv) {
     // manipulate input text
 
     for (int i = 0; i < length - 1; i++) {
-        input[i] = (input[i] + key) % 26;
+        if (isalpha(input[i])) {
+            input[i] = (input[i] + key) % 26;
+        }
     }
 
     // print result
