@@ -35,10 +35,10 @@ int main (int argc, char** argv) {
     }
 
     // manipulate input text
-
     for (int i = 0; i < length; i++) {
         if (isalpha(input[i])) {
-            input[i] = (input[i] + key) % 26;
+            char offset = isupper(input[i]) ? 'A' : 'a';
+            input[i] = (input[i] - offset + key) % 26 + offset;
         }
     }
 
