@@ -8,4 +8,5 @@ How do you know?: TODO
 
 sort3 uses: TODO
 
-How do you know?: TODO
+How do you know?:
+sort2 was the fastest, sort3 was faster than sort1 but slower than sort2, sort1 was the slowest
