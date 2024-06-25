@@ -23,7 +23,7 @@ int main (int argc, char** argv) {
     // manipulate input text
 
     for (int i = 0; i < length; i++) {
-        input[i] += argv[2];
+        input[i] = (input[i] + argv[2]) % 26;
     }
 
     // print result
