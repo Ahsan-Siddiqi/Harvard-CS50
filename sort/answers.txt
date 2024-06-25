@@ -1,11 +1,11 @@
-sort1 uses: selection sort
+sort1 uses: bubble sort
 
-How do you know?: sort1 was the slowest
+How do you know?:  sort1 was the slowest
 
 sort2 uses: merge sort
 
 How do you know?: sort2 was the fastest
 
-sort3 uses: bubble sort
+sort3 uses: selection sort
 
-How do you know?: sort3 was faster than sort1 but slower than sort2
+How do you know?: sort3 was slow
