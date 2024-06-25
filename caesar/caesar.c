@@ -1,4 +1,7 @@
 #include <stdio.h>
+#include <ctype.h>
+#include <stdlib.h>
+#include <string.h>
 
 int main (int argc, char** argv) {
 
@@ -6,8 +9,8 @@ int main (int argc, char** argv) {
 
     // grab arg input
     if (argc != 2 || argv[2]) {
-        prtinf("Usage: ./caesar key");
-        break;
+        printf("Usage: ./caesar key");
+        exit(1);
     }
 
     // grab input text
