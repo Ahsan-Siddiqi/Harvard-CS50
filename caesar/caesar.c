@@ -1,8 +1,8 @@
 #include <stdio.h>
 
-int main () {
+int main (char* arv, char arc) {
 
-    
+
 
     return 0;
 }
