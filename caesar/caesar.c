@@ -5,7 +5,7 @@ int main (int argc, char** argv) {
     char input[99999];
 
     // grab arg input
-    if (argc != 2 || !isdigit(argv[2])) {
+    if (argc != 2 || argv[2]) {
         prtinf("Usage: ./caesar key");
         break;
     }
