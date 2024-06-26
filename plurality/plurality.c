@@ -80,14 +80,17 @@ bool vote(string name)
 void print_winner(void)
 {
 
-    char winners[candidate_count][100];
+    int topVotes = 0;
 
      for (int i = 0, j = 0; i < candidate_count; i++) {
-        if (candidates[i+1].votes >= candidates[i].votes) {
-            strcpy(winners[j], candidates[i+1].name);
-            j++;
+        if (candidates[i].votes > topVotes) {
+            topVotes = candidates[i].votes;
         }
      }
-     printf("%s\n", candidates[curHigh].name);
+     for (int i = 0, j = 0; i < candidate_count; i++) {
+        if (candidates[i].votes == topVotes) {
+            printf("%s\n", candidates[i].name);
+        }
+     }
     return;
 }
