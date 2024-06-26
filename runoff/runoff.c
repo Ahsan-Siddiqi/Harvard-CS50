@@ -162,21 +162,21 @@ bool print_winner(void)
 {
     // TODO
     int high = 0;
+    int index;
+
     for (int i = 0; i < candidate_count; i++)
     {
         if (candidates[i].votes > high && !candidates[i].eliminated)
         {
             high = candidates[i].votes;
+            index = i;
         }
     }
     if (high > voter_count/2) {
-        for (int i = 0; i < candidate_count; i++)
-        {
-            if (candidates[i].votes == high && !candidates[i].eliminated) {
-                printf("%s", candidates[i].name);
-            }
-        }
+        printf("%s", candidates[index].name);
+        return true;
     }
+
     return false;
 }
 
