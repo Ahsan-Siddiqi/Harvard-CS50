@@ -148,7 +148,8 @@ void tabulate(void)
     {
         for (int j = 0; j < candidate_count; j++)
         {
-            if(!candidates[preferences[i][j]].eliminated) {
+            if (!candidates[preferences[i][j]].eliminated)
+            {
                 candidates[preferences[i][j]].votes++;
                 break;
             }
@@ -172,7 +173,8 @@ bool print_winner(void)
             index = i;
         }
     }
-    if (high > voter_count/2) {
+    if (high > voter_count / 2)
+    {
         printf("%s\n", candidates[index].name);
         return true;
     }
@@ -213,12 +215,12 @@ bool is_tie(int min)
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-     for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     {
-        if (candidates[i].votes == min) {
+        if (candidates[i].votes == min)
+        {
             candidates[i].eliminated = true;
         }
-
     }
     return;
 }
