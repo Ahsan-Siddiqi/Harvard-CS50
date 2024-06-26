@@ -86,9 +86,10 @@ void print_winner(void)
             curHigh[j] = i+1;
             j++;
         } else if (candidates[i+1].votes == candidates[i].votes) {
+            curHigh[j] = i+1;
             j++;
         }
      }
-     printf("%s\n", candidates[curHigh].name);
+     printf("%s\n", candidates[curHigh[]].name);
     return;
 }
