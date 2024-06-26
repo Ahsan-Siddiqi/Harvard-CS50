@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -176,19 +177,32 @@ int find_min(void)
         }
     }
 
-    return 0;
+    return low;
 }
 
 // Return true if the election is tied between all candidates, false otherwise
 bool is_tie(int min)
 {
-    // TODO
-    return false;
+
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes != min)
+        {
+            return false
+        }
+    }
+    return true;
 }
 
 // Eliminate the candidate (or candidates) in last place
 void eliminate(int min)
 {
-    // TODO
+     for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes == min) {
+            candidates[i].eliminate = true;
+        }
+
+    }
     return;
 }
