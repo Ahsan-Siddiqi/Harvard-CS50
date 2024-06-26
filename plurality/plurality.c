@@ -81,7 +81,7 @@ void print_winner(void)
 {
 
     int curHigh = 0;
-     for (int i = 0; i <= candidate_count; i++) {
+     for (int i = 0; i < candidate_count; i++) {
         if (candidates[i+1].votes > candidates[i].votes) {
             curHigh = i+1;
         }
