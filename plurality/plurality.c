@@ -80,10 +80,12 @@ bool vote(string name)
 void print_winner(void)
 {
 
-    int curHigh = 0;
-     for (int i = 0; i < candidate_count; i++) {
-        if (candidates[i+1].votes > candidates[i].votes) {
-            curHigh = i+1;
+    char winners[candidate_count][100];
+
+     for (int i = 0, j = 0; i < candidate_count; i++) {
+        if (candidates[i+1].votes >= candidates[i].votes) {
+            strcpy(winners[j], candidates[i+1].name);
+            j++;
         }
      }
      printf("%s\n", candidates[curHigh].name);
