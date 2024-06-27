@@ -38,7 +38,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             RGBTRIPLE* revPixel = &image[i][width - j];
-            RGBTRIPLE* flippedPixel = &image[i][j];
+            RGBTRIPLE* flippedPixel = &flipped[i][j];
             flippedPixel->rgbtRed = revPixel->rgbtRed;
             flippedPixel->rgbtBlue = revPixel->rgbtBlue;
             flippedPixel->rgbtGreen = revPixel->rgbtGreen;
