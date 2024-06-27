@@ -34,13 +34,24 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     RGBTRIPLE flipped[height][width];
-    
+
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             RGBTRIPLE* revPixel = &image[i][width - j];
-            pixel->rgbtRed = revPixel->rgbtRed;
-            pixel->rgbtBlue = revPixel->rgbtBlue;
-            pixel->rgbtGreen = revPixel->rgbtGreen;
+            RGBTRIPLE* flippedPixel = &image[i][j];
+            flippedPixel->rgbtRed = revPixel->rgbtRed;
+            flippedPixel->rgbtBlue = revPixel->rgbtBlue;
+            flippedPixel->rgbtGreen = revPixel->rgbtGreen;
+        }
+    }
+
+    for(int i = 0; i < height; i++) {
+        for (int j = 0; j < width; j++) {
+            RGBTRIPLE* pixel = &image[i][j];
+            RGBTRIPLE* flippedPixel = &flipped[i][j];
+            pixel->rgbtRed = flippedPixel->rgbtRed;
+            pixel->rgbtBlue = flippedPixel->rgbtBlue;
+            pixel->rgbtGreen = flippedPixel->rgbtGreen;
         }
     }
 
