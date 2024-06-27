@@ -67,7 +67,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &blurred[i][j];
+            RGBTRIPLE* blurredPixel = &blurred[i][j];
 
             RGBTRIPLE* p1 = &image[i-1][j-1];
             RGBTRIPLE* p2 = &image[i-1][j];
@@ -82,22 +82,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int avgBlue = (p1->rgbtBlue + p2->rgbtBlue + p3->rgbtBlue + p4->rgbtBlue + p5->rgbtBlue + p6->rgbtBlue + p7->rgbtBlue + p8->rgbtBlue) / 8;
             int avgGreen = (p1->rgbtGreen + p2->rgbtGreen + p3->rgbtGreen + p4->rgbtGreen + p5->rgbtGreen + p6->rgbtGreen + p7->rgbtGreen + p8->rgbtGreen) / 8;
 
-            blurred->rgbtRed = avgRed;
-            blurred->rgbtBlue = avgBlue;
-            blurred->rgbtGreen = avgGreen;
+            blurredPixel->rgbtRed = avgRed;
+            blurredPixel->rgbtBlue = avgBlue;
+            blurredPixel->rgbtGreen = avgGreen;
         }
+    }
 
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* blurred = &blurred[i][j];
-            pixel->rgbtRed = blurred->rgbtRed;
-            pixel->rgbtBlue = blurred->rgbtBlue;
-            pixel->rgbtGreen = blurred->rgbtGreen;
+            RGBTRIPLE* blurredPixel = &blurred[i][j];
+            pixel->rgbtRed = blurredPixel->rgbtRed;
+            pixel->rgbtBlue = blurredPixel->rgbtBlue;
+            pixel->rgbtGreen = blurredPixel->rgbtGreen;
         }
     }
-
-  }
 
     return;
 }
