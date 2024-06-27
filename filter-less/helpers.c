@@ -63,14 +63,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
 
     RGBTRIPLE blurred[height][width];
-    RGBTRIPLE* p1;
-    RGBTRIPLE* p2;
-    RGBTRIPLE* p3;
-    RGBTRIPLE* p4;
-    RGBTRIPLE* p5;
-    RGBTRIPLE* p6;
-    RGBTRIPLE* p7;
-    RGBTRIPLE* p8;
+    RGBTRIPLE zero;
+    zero.rgbtRed = 0;
+    zero.rgbtBlue = 0;
+    zero.rgbtGreen = 0;
+
+    RGBTRIPLE* p1 = &zero;
+    RGBTRIPLE* p2 = &zero;
+    RGBTRIPLE* p3 = &zero;
+    RGBTRIPLE* p4 = &zero;
+    RGBTRIPLE* p5 = &zero;
+    RGBTRIPLE* p6 = &zero;
+    RGBTRIPLE* p7 = &zero;
+    RGBTRIPLE* p8 = &zero;
 
     for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
