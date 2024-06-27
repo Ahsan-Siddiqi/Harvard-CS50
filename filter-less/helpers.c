@@ -65,12 +65,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
   for(int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
             RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* pixel = &image[i][j];
+
+            RGBTRIPLE* p1 = &image[i-1][j-1];
+            RGBTRIPLE* p2 = &image[i-1][j];
+            RGBTRIPLE* p3 = &image[i-1][j+1];
+            RGBTRIPLE* p4 = &image[i][j-1];
+            RGBTRIPLE* p5 = &image[i][j+1];
+            RGBTRIPLE* p6 = &image[i+1][j-1];
+            RGBTRIPLE* p7 = &image[i+1][j];
+            RGBTRIPLE* p8 = &image[i+1][j+1];
+
+            int avg = (p1 + p2 + p3 + p4 + p5 + p6 + p7 + p8) / 8;
 
             pixel->rgbtRed = avg;
             pixel->rgbtBlue = avg;
