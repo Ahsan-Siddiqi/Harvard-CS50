@@ -69,14 +69,14 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE* pixel = &image[i][j];
             RGBTRIPLE* blurredPixel = &blurred[i][j];
 
-            if (RGBTRIPLE* p1 = &image[i-1][j-1];)? continue : free(p1);
-            if (RGBTRIPLE* p2 = &image[i-1][j])? continue : free(p2);
-            if (RGBTRIPLE* p3 = &image[i-1][j+1])? continue : free(p3);
-            if (RGBTRIPLE* p4 = &image[i][j-1])? continue : free(p4);
-            if (RGBTRIPLE* p5 = &image[i][j+1])? continue : free(p5);
-            if (RGBTRIPLE* p6 = &image[i+1][j-1])? continue : free(p6);
-            if (RGBTRIPLE* p7 = &image[i+1][j])? continue : free(p7);
-            if (RGBTRIPLE* p8 = &image[i+1][j+1])? continue : free(p8);
+            if (RGBTRIPLE* p1 = &image[i-1][j-1];)? continue : p1 = 0;
+            if (RGBTRIPLE* p2 = &image[i-1][j])? continue : p2 = 0;
+            if (RGBTRIPLE* p3 = &image[i-1][j+1])? continue : p3 = 0;
+            if (RGBTRIPLE* p4 = &image[i][j-1])? continue : p4 = 0;
+            if (RGBTRIPLE* p5 = &image[i][j+1])? continue : p5 = 0;
+            if (RGBTRIPLE* p6 = &image[i+1][j-1])? continue : p6 = 0;
+            if (RGBTRIPLE* p7 = &image[i+1][j])? continue : p7 = 0;
+            if (RGBTRIPLE* p8 = &image[i+1][j+1])? continue : p8 = 0;
 
             int avgRed = (p1->rgbtRed + p2->rgbtRed + p3->rgbtRed + p4->rgbtRed + p5->rgbtRed + p6->rgbtRed + p7->rgbtRed + p8->rgbtRed) / 8;
             int avgBlue = (p1->rgbtBlue + p2->rgbtBlue + p3->rgbtBlue + p4->rgbtBlue + p5->rgbtBlue + p6->rgbtBlue + p7->rgbtBlue + p8->rgbtBlue) / 8;
