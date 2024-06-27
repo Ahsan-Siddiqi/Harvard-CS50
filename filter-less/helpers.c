@@ -49,7 +49,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     for (int i = 0; i < height; i++) {
         for (int j = 0; j < width / 2; j++) {
-            
+
             RGBTRIPLE temp = image[i][j];
             image[i][j] = image[i][width - j - 1];
             image[i][width - j - 1] = temp;
@@ -64,59 +64,35 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 {
 
     RGBTRIPLE blurred[height][width];
-    RGBTRIPLE zero;
-    zero.rgbtRed = 0;
-    zero.rgbtBlue = 0;
-    zero.rgbtGreen = 0;
 
-    RGBTRIPLE* p1 = &zero;
-    RGBTRIPLE* p2 = &zero;
-    RGBTRIPLE* p3 = &zero;
-    RGBTRIPLE* p4 = &zero;
-    RGBTRIPLE* p5 = &zero;
-    RGBTRIPLE* p6 = &zero;
-    RGBTRIPLE* p7 = &zero;
-    RGBTRIPLE* p8 = &zero;
-
-    for(int i = 0; i < height; i++) {
+    for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* blurredPixel = &blurred[i][j];
+            int redSum = 0, greenSum = 0, blueSum = 0;
+            int count = 0;
 
-            if (i != 0) {
-                p2 = &image[i-1][j];
+            for (int di = -1; di <= 1; di++) {
+                for (int dj = -1; dj <= 1; dj++) {
+                    int ni = i + di;
+                    int nj = j + dj;
 
-                if (j != 0) {p1 = &image[i-1][j-1];};
-                if (j != width - 1) {p3 = &image[i-1][j+1];};
-            }
-            if (i != height - 1) {
-                if (j != 0) {p6 = &image[i+1][j-1];};
-                if (j != width - 1) {p8 = &image[i+1][j+1];};
-                p7 = &image[i+1][j];
-            }
-            if (j != height - 1 || j != 0) {
-                if (j != 0) {p4 = &image[i][j-1];};
-                if (j != width - 1) {p5 = &image[i][j+1];};
+                    if (ni >= 0 && ni < height && nj >= 0 && nj < width) {
+                        redSum += image[ni][nj].rgbtRed;
+                        greenSum += image[ni][nj].rgbtGreen;
+                        blueSum += image[ni][nj].rgbtBlue;
+                        count++;
+                    }
+                }
             }
 
-
-            int avgRed = (p1->rgbtRed + p2->rgbtRed + p3->rgbtRed + p4->rgbtRed + p5->rgbtRed + p6->rgbtRed + p7->rgbtRed + p8->rgbtRed) / 8;
-            int avgBlue = (p1->rgbtBlue + p2->rgbtBlue + p3->rgbtBlue + p4->rgbtBlue + p5->rgbtBlue + p6->rgbtBlue + p7->rgbtBlue + p8->rgbtBlue) / 8;
-            int avgGreen = (p1->rgbtGreen + p2->rgbtGreen + p3->rgbtGreen + p4->rgbtGreen + p5->rgbtGreen + p6->rgbtGreen + p7->rgbtGreen + p8->rgbtGreen) / 8;
-
-            blurredPixel->rgbtRed = avgRed;
-            blurredPixel->rgbtBlue = avgBlue;
-            blurredPixel->rgbtGreen = avgGreen;
+            blurred[i][j].rgbtRed = round((float)redSum / count);
+            blurred[i][j].rgbtGreen = round((float)greenSum / count);
+            blurred[i][j].rgbtBlue = round((float)blueSum / count);
         }
     }
 
-    for(int i = 0; i < height; i++) {
+    for (int i = 0; i < height; i++) {
         for (int j = 0; j < width; j++) {
-            RGBTRIPLE* pixel = &image[i][j];
-            RGBTRIPLE* blurredPixel = &blurred[i][j];
-            pixel->rgbtRed = blurredPixel->rgbtRed;
-            pixel->rgbtBlue = blurredPixel->rgbtBlue;
-            pixel->rgbtGreen = blurredPixel->rgbtGreen;
+            image[i][j] = blurred[i][j];
         }
     }
 
