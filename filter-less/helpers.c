@@ -72,17 +72,17 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             if (i != 0) {
                 RGBTRIPLE* p2 = &image[i-1][j];
 
-                if (j != 0) {RGBTRIPLE* p1 = &image[i-1][j-1]};
-                if (j != width - 1) {RGBTRIPLE* p3 = &image[i-1][j+1]};
+                if (j != 0) {RGBTRIPLE* p1 = &image[i-1][j-1];};
+                if (j != width - 1) {RGBTRIPLE* p3 = &image[i-1][j+1];};
             }
             if (i != height - 1) {
-                if (j != 0) {RGBTRIPLE* p6 = &image[i+1][j-1]};
-                if (j != width - 1) {RGBTRIPLE* p8 = &image[i+1][j+1]};
+                if (j != 0) {RGBTRIPLE* p6 = &image[i+1][j-1];};
+                if (j != width - 1) {RGBTRIPLE* p8 = &image[i+1][j+1];};
                 RGBTRIPLE* p7 = &image[i+1][j];
             }
             if (j != height - 1 || j != 0) {
-                if (j != 0) {RGBTRIPLE* p4 = &image[i][j-1]};
-                if (j != width - 1) {RGBTRIPLE* p5 = &image[i][j+1]};
+                if (j != 0) {RGBTRIPLE* p4 = &image[i][j-1];};
+                if (j != width - 1) {RGBTRIPLE* p5 = &image[i][j+1];};
             }
 
 
