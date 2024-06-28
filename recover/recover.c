@@ -48,7 +48,9 @@ int main(int argc, char *argv[])
 
     }
 
-    fclose(output);
+    if (output != NULL) {
+        fclose(output);
+    }
     fclose(forensic);
 
     return 0;
