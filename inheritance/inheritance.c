@@ -79,8 +79,8 @@ void free_family(person *p)
     // TODO: Handle base case
 
     // TODO: Free parents recursively
-    while() {
-
+    while(nPerson->parents[0]) {
+        
 
     }
     // TODO: Free child
