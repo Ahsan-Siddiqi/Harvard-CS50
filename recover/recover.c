@@ -40,8 +40,11 @@ int main(int argc, char *argv[])
             fwrite(buffer, sizeof(unsigned char), bytesRead, output);
 
             nPics++;
+        } else if (output != NULL) {
+
+            fwrite(buffer, sizeof(unsigned char), bytesRead, output);
         }
-        // copy contents until another pattern found
+
 
     }
 
