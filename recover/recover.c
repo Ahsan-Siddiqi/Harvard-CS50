@@ -14,5 +14,7 @@ int main(int argc, char *argv[])
         // iterate over chunks of 512 bytes or 1 block
 
             // when pattern match, open file to write to
+
+            // copy contents until another pattern found
     return 0;
 }
