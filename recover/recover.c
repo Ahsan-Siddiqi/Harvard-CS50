@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
         // iterate over chunks of 512 bytes or 1 block
     char buffer[512];
 
-    while(fread(&buffer, sizeof(char) * 4, ))
+    while(fread(&buffer, sizeof(char), 4, forensic))
 
             // when pattern match, open file to write to
 
