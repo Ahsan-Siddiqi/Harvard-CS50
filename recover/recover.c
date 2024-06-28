@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
             sprintf(picName, "%d.jpg", nPics);
             fopen(picName, 'w');
 
-            fwrite(&buffer)
+            fwrite(&buffer, 1, sizeof(buffer), picName);
 
             nPics++;
         }
