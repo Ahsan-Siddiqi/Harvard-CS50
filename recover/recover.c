@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     char picName[8];
     FILE* output = NULL;
 
-    while((bytesRead = fread(&buffer, sizeof(unsigned char), sizeof(buffer), forensic)) > 0) {
+    while((bytesRead = fread(buffer, sizeof(unsigned char), sizeof(buffer), forensic)) > 0) {
 
         // when pattern match, open file to write to
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
