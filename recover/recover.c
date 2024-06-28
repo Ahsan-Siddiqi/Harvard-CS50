@@ -29,8 +29,8 @@ int main(int argc, char *argv[])
 
         // when pattern match, open file to write to
         if (bytesRead >= 4 && !memcmp(buffer, pattern, 3)) {
-            picName = 
-            fopen(nPics".jpg", 'w');
+            sprintf(picName, "%d.jpg", nPics);
+            fopen(picName, 'w');
             nPics++;
         }
         // copy contents until another pattern found
