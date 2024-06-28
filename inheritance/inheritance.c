@@ -80,9 +80,8 @@ void free_family(person *p)
 
     // TODO: Free parents recursively
     while(nPerson->parents[0]) {
-        nPerson = parents[]
-        free(nPerson->parents[0]);
-        free(nPerson->parents[1]);
+        
+
     }
     // TODO: Free child
 }
