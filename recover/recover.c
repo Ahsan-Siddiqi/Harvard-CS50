@@ -27,7 +27,9 @@ int main(int argc, char *argv[])
     while(bytesRead = fread(&buffer, 1, sizeof(buffer), forensic)) {
 
         // when pattern match, open file to write to
-        if (bytesRead >= 4 && memcmp(buffer, ))
+        if (bytesRead >= 4 && !memcmp(buffer, pattern, 3)) {
+            
+        }
         // copy contents until another pattern found
 
     }
