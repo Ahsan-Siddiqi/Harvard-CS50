@@ -31,7 +31,9 @@ int main(int argc, char *argv[])
             char picName[7];
             sprintf(picName, "%d.jpg", nPics);
             fopen(picName, 'w');
+
             
+
             nPics++;
         }
         // copy contents until another pattern found
