@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
     size_t bytesRead;
     char pattern[] = {0xff, 0xd8, 0xff};
     int nPics = 0;
-    char picName[7];
+    char picName[8];
     FILE* output = NULL;
 
     while((bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) > 0) {
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
                 fclose(output);
             }
 
-            sprintf(picName, "%d.jpg", nPics);
+            sprintf(picName, "%3d.jpg", nPics);
             output = fopen(picName, "w");
 
             fwrite(&buffer, sizeof(buffer), 1, output);
