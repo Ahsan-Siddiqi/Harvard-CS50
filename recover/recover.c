@@ -23,16 +23,21 @@ int main(int argc, char *argv[])
     size_t bytesRead;
     char pattern[] = {0xff, 0xd8, 0xff};
     int nPics = 0;
+    char picName[7];
+    FILE* output = NULL;
 
     while(bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) {
 
         // when pattern match, open file to write to
         if (!memcmp(buffer, pattern, 3)) {
-            char picName[7];
-            sprintf(picName, "%d.jpg", nPics);
-            fopen(picName, 'w');
+            if(output != NULL) {
+                fclose(output);
+            }
 
-            fwrite(&buffer, sizeof(buffer), 1, picName);
+            sprintf(picName, "%d.jpg", nPics);
+            output = fopen(picName, 'w');
+
+            fwrite(&buffer, sizeof(buffer), 1, output);
 
             nPics++;
         }
