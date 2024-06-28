@@ -21,11 +21,15 @@ int main(int argc, char *argv[])
 
         // iterate over chunks of 512 bytes or 1 block
     char buffer[512];
+    int bytesRead;
 
-    while(fread(&buffer, 1, sizeof(buffer), forensic))
+    while(bytesRead = fread(&buffer, 1, sizeof(buffer), forensic)) {
 
-            // when pattern match, open file to write to
+        // when pattern match, open file to write to
+        if ()
+        // copy contents until another pattern found
 
-            // copy contents until another pattern found
+    }
+
     return 0;
 }
