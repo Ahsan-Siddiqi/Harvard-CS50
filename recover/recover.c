@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
     char picName[7];
     FILE* output = NULL;
 
-    while(bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) {
+    while((bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) > 0) {
 
         // when pattern match, open file to write to
         if (!memcmp(buffer, pattern, 3)) {
@@ -44,6 +44,9 @@ int main(int argc, char *argv[])
         // copy contents until another pattern found
 
     }
+
+    fclose(output);
+    fclose(forensic);
 
     return 0;
 }
