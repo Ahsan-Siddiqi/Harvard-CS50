@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
                 fclose(output);
             }
 
-            sprintf(picName, "%3d.jpg", nPics);
+            sprintf(picName, "%03d.jpg", nPics);
             output = fopen(picName, "w");
 
             fwrite(&buffer, sizeof(buffer), 1, output);
