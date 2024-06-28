@@ -9,11 +9,20 @@ int main(int argc, char *argv[])
         exit(1)
     }
 
-    if (fopen(argv[1]))
+    FILE* forensic;
+
+    forensic = fopen(argv[1]);
+
+    if (!forensic) {
+        printf("Input file cannot be opened");
+        exit(1)
+    }
+
 
     // look through the raw for the jpeg pattern (0xff 0xd8 0xff)
 
         // iterate over chunks of 512 bytes or 1 block
+    for ()
 
             // when pattern match, open file to write to
 
