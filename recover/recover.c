@@ -9,11 +9,9 @@ int main(int argc, char *argv[])
         exit(1)
     }
 
-    FILE* forensic;
+    FILE* forensic = fopen(argv[1]);
 
-    forensic = fopen(argv[1]);
-
-    if (!forensic) {
+    if (forensic == NULL) {
         printf("Input file cannot be opened");
         exit(1)
     }
