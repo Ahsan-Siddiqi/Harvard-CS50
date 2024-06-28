@@ -27,12 +27,12 @@ int main(int argc, char *argv[])
     while(bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) {
 
         // when pattern match, open file to write to
-        if (bytesRead >= 4 && !memcmp(buffer, pattern, 3)) {
+        if (!memcmp(buffer, pattern, 3)) {
             char picName[7];
             sprintf(picName, "%d.jpg", nPics);
             fopen(picName, 'w');
 
-            fwrite(&buffer, 1, sizeof(buffer), picName);
+            fwrite(&buffer, sizeof(buffer), 1, picName);
 
             nPics++;
         }
