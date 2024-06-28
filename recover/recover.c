@@ -20,9 +20,8 @@ int main(int argc, char *argv[])
     // look through the raw for the jpeg pattern (0xff 0xd8 0xff)
 
         // iterate over chunks of 512 bytes or 1 block
-    char buffer[512];
+    unsigned char buffer[512];
     size_t bytesRead;
-    char pattern[] = {0xff, 0xd8, 0xff};
     int nPics = 0;
     char picName[8];
     FILE* output = NULL;
@@ -30,7 +29,7 @@ int main(int argc, char *argv[])
     while((bytesRead = fread(&buffer, sizeof(buffer), 1, forensic)) > 0) {
 
         // when pattern match, open file to write to
-        if (!memcmp(buffer, pattern, 3)) {
+         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0) {
             if(output != NULL) {
                 fclose(output);
             }
