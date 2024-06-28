@@ -20,7 +20,9 @@ int main(int argc, char *argv[])
     // look through the raw for the jpeg pattern (0xff 0xd8 0xff)
 
         // iterate over chunks of 512 bytes or 1 block
-    for (int i = )
+    
+
+    while(fread())
 
             // when pattern match, open file to write to
 
