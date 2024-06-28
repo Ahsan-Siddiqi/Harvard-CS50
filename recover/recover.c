@@ -9,5 +9,7 @@ int main(int argc, char *argv[])
         exit(1)
     }
 
+    // look through the raw for the jpeg pattern (0xff 0xd8 0xff)
+
     return 0;
 }
