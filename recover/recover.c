@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
     char buffer[512];
     size_t bytesRead;
     char pattern[] = {0xff, 0xd8, 0xff};
-
+    int nPics = 0;
 
     while(bytesRead = fread(&buffer, 1, sizeof(buffer), forensic)) {
 
         // when pattern match, open file to write to
         if (bytesRead >= 4 && !memcmp(buffer, pattern, 3)) {
-            fopen()
+            fopen(nPics"")
         }
         // copy contents until another pattern found
 
