@@ -44,9 +44,11 @@ bool load(const char *dictionary)
 
     if (dict == NULL) return false;
 
+    char* word[LENGTH + 1];
     char c;
+    
     while (fread(&c, sizeof(char), 1, dict)) {
-        word[]
+
     }
 
 
