@@ -44,7 +44,7 @@ bool load(const char *dictionary)
 
     if (dict == NULL) return false;
 
-    
+    while (fread(dict, c))
 
 
     return false;
