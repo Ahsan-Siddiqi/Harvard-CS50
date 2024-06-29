@@ -19,6 +19,7 @@ const unsigned int N = 26;
 node *table[N];
 
 // Returns true if word is in dictionary, else false
+// search function
 bool check(const char *word)
 {
     // TODO
@@ -33,6 +34,7 @@ unsigned int hash(const char *word)
 }
 
 // Loads dictionary into memory, returning true if successful, else false
+// insert function
 bool load(const char *dictionary)
 {
     // TODO
@@ -47,6 +49,7 @@ unsigned int size(void)
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
+// delete function
 bool unload(void)
 {
     // TODO
