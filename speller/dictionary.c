@@ -46,9 +46,25 @@ bool load(const char *dictionary)
 
     char* word[LENGTH + 1];
     char c;
-    
-    while (fread(&c, sizeof(char), 1, dict)) {
+    int index;
 
+    while (fread(&c, sizeof(char), 1, dict)) {
+        if (isalpha(c) || (c == '\'' && index > 0))
+        {
+            // Append character to word
+            word[index] = c;
+            index++;
+
+            // Ignore alphabetical strings too long to be words
+            if (index > LENGTH)
+            {
+                // Consume remainder of alphabetical string
+                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
+
+                // Prepare for new word
+                index = 0;
+            }
+        }
     }
 
 
