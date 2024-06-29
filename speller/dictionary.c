@@ -54,16 +54,14 @@ bool load(const char *dictionary)
             // Append character to word
             word[index] = c;
             index++;
+        }
+        else if (index > 0)
+        {
+            // Terminate current word
+            word[index] = '\0';
 
-            // Ignore alphabetical strings too long to be words
-            if (index > LENGTH)
-            {
-                // Consume remainder of alphabetical string
-                while (fread(&c, sizeof(char), 1, file) && isalpha(c));
-
-                // Prepare for new word
-                index = 0;
-            }
+            // Prepare for next word
+            index = 0;
         }
     }
 
