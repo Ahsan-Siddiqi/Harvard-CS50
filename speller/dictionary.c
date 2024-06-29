@@ -60,6 +60,8 @@ bool load(const char *dictionary)
             // Terminate current word
             word[index] = '\0';
 
+            //insert word
+
             // Prepare for next word
             index = 0;
         }
