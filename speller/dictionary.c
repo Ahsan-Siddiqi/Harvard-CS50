@@ -2,6 +2,8 @@
 
 #include <ctype.h>
 #include <stdbool.h>
+#include <stdio.h>
+
 
 #include "dictionary.h"
 
@@ -38,7 +40,12 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *
+    FILE *dict = fopen(dictionary, 'r');
+
+    if (dict == NULL) return false;
+
+    
+
 
     return false;
 }
