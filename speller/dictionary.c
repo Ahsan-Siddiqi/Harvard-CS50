@@ -3,8 +3,8 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -25,22 +25,30 @@ node *table[N];
 bool check(const char *word)
 {
     char lowerWord[strlen(word) + 1];
-    for (int i = 0; i < strlen(word); i++) {
+    for (int i = 0; i < strlen(word); i++)
+    {
         lowerWord[i] = tolower(word[i]);
     }
     lowerWord[strlen(word)] = '\0';
 
     unsigned int index = hash(lowerWord);
 
-    if(table[index] == NULL) {
+    if (table[index] == NULL)
+    {
         return false;
-    } else if (strcmp(lowerWord, table[index]->word) == 0) {
+    }
+    else if (strcmp(lowerWord, table[index]->word) == 0)
+    {
         return true;
-    } else {
+    }
+    else
+    {
         node *curNode = table[index];
 
-        while (curNode != NULL) {
-            if (strcmp(lowerWord, curNode->word) == 0) return true;
+        while (curNode != NULL)
+        {
+            if (strcmp(lowerWord, curNode->word) == 0)
+                return true;
             curNode = curNode->next;
         }
     }
@@ -56,28 +64,31 @@ unsigned int hash(const char *word)
     for (int i = 0; i < len; i++)
     {
         hash = (hash * 31 + tolower(word[i])) % N;
-        hash = (hash * 17 + (unsigned char)(tolower(word[i]) * tolower(word[(i+1) % len]))) % N;
+        hash = (hash * 17 + (unsigned char) (tolower(word[i]) * tolower(word[(i + 1) % len]))) % N;
     }
-    return (unsigned int)hash;
+    return (unsigned int) hash;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         table[i] = NULL;
     }
 
     FILE *dict = fopen(dictionary, "r");
 
-    if (dict == NULL) return false;
+    if (dict == NULL)
+        return false;
 
     char word[LENGTH + 1];
     char c;
     int index = 0;
 
-    while (fread(&c, sizeof(char), 1, dict)) {
+    while (fread(&c, sizeof(char), 1, dict))
+    {
         if (isalpha(c) || (c == '\'' && index > 0))
         {
             // Append character to word
@@ -89,7 +100,7 @@ bool load(const char *dictionary)
             // Terminate current word
             word[index] = '\0';
 
-            //insert word
+            // insert word
             node *newNode = malloc(sizeof(node));
 
             if (newNode == NULL)
@@ -102,12 +113,16 @@ bool load(const char *dictionary)
             newNode->next = NULL;
 
             unsigned int hashIndex = hash(word);
-            if (table[hashIndex] == NULL) {
+            if (table[hashIndex] == NULL)
+            {
                 table[hashIndex] = newNode;
-            } else {
+            }
+            else
+            {
                 node *curNode = table[hashIndex];
 
-                while (curNode->next != NULL) {
+                while (curNode->next != NULL)
+                {
                     curNode = curNode->next;
                 }
                 curNode->next = newNode;
@@ -127,10 +142,12 @@ unsigned int size(void)
 {
     unsigned int words = 0;
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i < N; i++)
+    {
         node *curNode = table[i];
 
-        while (curNode != NULL) {
+        while (curNode != NULL)
+        {
             words++;
             curNode = curNode->next;
         }
@@ -141,8 +158,10 @@ unsigned int size(void)
 // Unloads dictionary from memory, returning true if successful, else false
 bool unload(void)
 {
-    for (int i = 0; i < N; i++) {
-        while (table[i] != NULL) {
+    for (int i = 0; i < N; i++)
+    {
+        while (table[i] != NULL)
+        {
             node *temp = table[i];
             table[i] = table[i]->next;
             free(temp);
