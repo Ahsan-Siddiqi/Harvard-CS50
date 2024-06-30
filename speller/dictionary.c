@@ -41,7 +41,7 @@ bool load(const char *dictionary)
 {
 
     for (int i = 0; i < N; i++) {
-        table[i]->next = NULL;
+        table[i] = NULL;
     }
 
     FILE *dict = fopen(dictionary, 'r');
@@ -67,7 +67,8 @@ bool load(const char *dictionary)
             //insert word
             node *newNode = malloc(sizeof(node));
             strcpy(newNode->word, word);
-            
+            newNode->next = NULL;
+            &table[hash(word)] = newNode;
 
             // Prepare for next word
             index = 0;
