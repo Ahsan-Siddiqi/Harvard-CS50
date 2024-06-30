@@ -166,7 +166,7 @@ bool unload(void)
 
         while (curNode->next != NULL) {
             prevNode = curNode;
-            if (free(prevNode));
+            free(prevNode);
             curNode = curNode->next;
         }
 
