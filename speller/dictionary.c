@@ -37,7 +37,7 @@ bool check(const char *word)
     } else {
         node *curNode = table[index];
 
-        while (strcmp(curNode->word, lowerWord) != 0 || curNode->next != NULL) {
+        while (strcmp(curNode->word, lowerWord) != 0 && curNode->next != NULL) {
             curNode = curNode->next;
         }
 
