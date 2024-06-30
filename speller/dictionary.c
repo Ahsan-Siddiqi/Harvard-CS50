@@ -41,9 +41,9 @@ bool check(const char *word)
             curNode = curNode->next;
         }
 
-        curNode->next = newNode;
+        if (strcmp(lowerWord, table[index]->word) == 0) return true;
     }
-        table[index]
+
     return false;
 }
 
