@@ -46,7 +46,7 @@ bool check(const char *word)
 
             if (strcmp(lowerWord, curNode->word) == 0) return true;
 
-            //printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
+            printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
 
             curNode = curNode->next;
         }
