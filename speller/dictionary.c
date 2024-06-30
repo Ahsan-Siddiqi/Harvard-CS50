@@ -65,7 +65,7 @@ bool load(const char *dictionary)
             word[index] = '\0';
 
             //insert word
-
+            hash(word);
             // Prepare for next word
             index = 0;
         }
