@@ -72,8 +72,8 @@ bool load(const char *dictionary)
             if (table[hashIndex] == NULL) {
                 table[hash(word)] = newNode;
             } else {
-                while (table[hashIndex] != NULL) {
-                    table[hashIndex]->next = newNode;
+                while (table[hashIndex]->next != NULL) {
+                    
             }
 
             // Prepare for next word
