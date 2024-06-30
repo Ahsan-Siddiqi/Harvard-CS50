@@ -148,11 +148,11 @@ unsigned int size(void)
         if (curNode != NULL) words++;
 
         while (curNode->next != NULL) {
-            curNode = curNode->next;
             words++;
+            curNode = curNode->next;
         }
     }
-    return (words > 0) ? words : 0;
+    return words;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
