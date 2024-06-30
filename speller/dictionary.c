@@ -164,7 +164,7 @@ bool unload(void)
     for (int i = 0; i < sizeof(table); i++) {
         node *curNode = table[i];
 
-        while (curNode->next != NULL) {
+        while (nextNode->next != NULL) {
             nextNode = curNode->next;
             free(curNode);
         }
