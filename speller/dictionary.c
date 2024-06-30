@@ -22,19 +22,16 @@ const unsigned int N = 262143;
 node *table[N];
 
 // Returns true if word is in dictionary, else false
-// search function
 bool check(const char *word)
 {
-    // TODO
     char lowerWord[strlen(word) + 1];
     for (int i = 0; i < strlen(word); i++) {
         lowerWord[i] = tolower(word[i]);
     }
     lowerWord[strlen(word)] = '\0';
 
-
     unsigned int index = hash(lowerWord);
-    //printf("lowerWord: %s - table[index]->word: %s\n", lowerWord, table[index]->word);
+
     if(table[index] == NULL) {
         return false;
     } else if (strcmp(lowerWord, table[index]->word) == 0) {
@@ -43,15 +40,9 @@ bool check(const char *word)
         node *curNode = table[index];
 
         while (curNode != NULL) {
-
             if (strcmp(lowerWord, curNode->word) == 0) return true;
-
-            //printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
-
             curNode = curNode->next;
         }
-
-
     }
 
     return false;
@@ -71,7 +62,6 @@ unsigned int hash(const char *word)
 }
 
 // Loads dictionary into memory, returning true if successful, else false
-// insert function
 bool load(const char *dictionary)
 {
 
@@ -135,7 +125,6 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
     unsigned int words = 0;
 
     for (int i = 0; i < N; i++) {
@@ -150,11 +139,8 @@ unsigned int size(void)
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
-// delete function
 bool unload(void)
 {
-    // TODO
-
     for (int i = 0; i < N; i++) {
         while (table[i] != NULL) {
             node *temp = table[i];
