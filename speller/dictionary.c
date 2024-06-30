@@ -65,7 +65,10 @@ bool load(const char *dictionary)
             word[index] = '\0';
 
             //insert word
-            hash(word);
+            node *newNode = malloc(sizeof(node));
+            strcpy(newNode->word, word);
+            
+
             // Prepare for next word
             index = 0;
         }
