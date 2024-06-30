@@ -151,7 +151,7 @@ unsigned int size(void)
             words++;
         }
     }
-    return 0;
+    return (words > 0) ? words : 0;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
@@ -159,5 +159,17 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    node *nextNode;
+
+    for (int i = 0; i < sizeof(table); i++) {
+        node *curNode = table[i];
+
+        while (curNode->next != NULL) {
+            nextNode = curNode->next;
+            free(curNode);
+        }
+
+    }
+    return (words > 0) ? words : 0;
     return false;
 }
