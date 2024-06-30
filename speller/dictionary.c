@@ -32,7 +32,9 @@ bool check(const char *word)
     }
     lowerWord[strlen(word) + 1 ] = '\0';
 
+
     unsigned int index = hash(lowerWord);
+    printf("lowerWord: %s\ntable[index]->word: %s\n", lowerWord, table[index]->word);
     if(table[index] == NULL) {
         return false;
     } else if (strcmp(lowerWord, table[index]->word) == 0) {
@@ -41,6 +43,8 @@ bool check(const char *word)
         node *curNode = table[index];
 
         while (strcmp(curNode->word, lowerWord) != 0 && curNode->next != NULL) {
+            printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
+
             curNode = curNode->next;
         }
 
