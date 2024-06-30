@@ -34,7 +34,7 @@ bool check(const char *word)
 
 
     unsigned int index = hash(lowerWord);
-    printf("lowerWord: %s\ntable[index]->word: %s\n", lowerWord, table[index]->word);
+    //printf("lowerWord: %s - table[index]->word: %s\n", lowerWord, table[index]->word);
     if(table[index] == NULL) {
         return false;
     } else if (strcmp(lowerWord, table[index]->word) == 0) {
@@ -65,6 +65,7 @@ unsigned int hash(const char *word)
     {
         hash = ((hash << 5) + hash) + tolower(c); // hash * 33 + c
     }
+    printf("word: %s - hash: %lu\n", word, hash % N);
 
     return hash % N;
 }
