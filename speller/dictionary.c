@@ -145,9 +145,7 @@ unsigned int size(void)
     for (int i = 0; i < N; i++) {
         node *curNode = table[i];
 
-        if (curNode != NULL) words++;
-
-        while (curNode->next != NULL) {
+        while (curNode != NULL) {
             words++;
             curNode = curNode->next;
         }
