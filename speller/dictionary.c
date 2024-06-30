@@ -30,7 +30,7 @@ bool check(const char *word)
     for (int i = 0; i < strlen(word); i++) {
         lowerWord[i] = tolower(word[i]);
     }
-    lowerWord[strlen(word) + 1 ] = '\0';
+    lowerWord[strlen(lowerWord)] = '\0';
 
 
     unsigned int index = hash(lowerWord);
