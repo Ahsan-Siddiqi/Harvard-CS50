@@ -159,16 +159,18 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *nextNode;
+    node *prevNode;
 
     for (int i = 0; i < sizeof(table); i++) {
         node *curNode = table[i];
 
-        while (nextNode->next != NULL) {
-            nextNode = curNode->next;
-            free(curNode);
+        while (curNode->next != NULL) {
+            prevNode = curNode;
+            free(prevNode);
+            curNode = curNode->next;
         }
-
+        
+        free(curNode);
     }
     return (words > 0) ? words : 0;
     return false;
