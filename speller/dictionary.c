@@ -166,12 +166,13 @@ bool unload(void)
 
         while (curNode->next != NULL) {
             prevNode = curNode;
-            free(prevNode);
+            if (free(prevNode));
             curNode = curNode->next;
         }
-        
+
         free(curNode);
+        if (table[i]->next != NULL) free(table[i]);
     }
-    return (words > 0) ? words : 0;
-    return false;
+
+    return true;
 }
