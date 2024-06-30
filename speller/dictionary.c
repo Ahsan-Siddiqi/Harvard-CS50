@@ -33,7 +33,9 @@ bool check(const char *word)
     lowerWord[strlen(word) + 1 ] = '\0';
 
     unsigned int index = hash(lowerWord);
-    if (strcmp(lowerWord, table[index]->word) == 0) {
+    if(table[index] == NULL) {
+        return false;
+    } else if (strcmp(lowerWord, table[index]->word) == 0) {
         return true;
     } else {
         node *curNode = table[index];
