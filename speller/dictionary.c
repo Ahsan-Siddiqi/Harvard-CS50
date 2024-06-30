@@ -42,13 +42,16 @@ bool check(const char *word)
     } else {
         node *curNode = table[index];
 
-        while (strcmp(curNode->word, lowerWord) != 0 && curNode->next != NULL) {
-            printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
+        while (curNode != NULL) {
+
+            if (strcmp(lowerWord, curNode->word) == 0) return true;
+
+            //printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
 
             curNode = curNode->next;
         }
 
-        if (strcmp(lowerWord, curNode->word) == 0) return true;
+
     }
 
     return false;
@@ -58,7 +61,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    printf("word: %s", word);
+    //printf("word: %s", word);
     unsigned long hash = 5381;
     int c;
 
@@ -66,7 +69,7 @@ unsigned int hash(const char *word)
     {
         hash = ((hash << 5) + hash) + tolower(c); // hash * 33 + c
     }
-    printf(" - hash: %lu\n", hash % N);
+    //printf(" - hash: %lu\n", hash % N);
 
     return hash % N;
 }
