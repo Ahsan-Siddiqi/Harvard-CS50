@@ -26,9 +26,23 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    char *lowerword = tolower
-    unsigned int index = hash(word);
-    if
+    char lowerWord[strlen(word)];
+    for (int i = 0; i < strlen(word); i++) {
+        lowerWord[i] = tolower(word[i]);
+    }
+
+    unsigned int index = hash(lowerWord);
+    if (strcmp(lowerWord, table[index]->word) == 0) {
+        return true;
+    } else {
+        node *curNode = table[index];
+
+        while (strcmp(curNode->word, lowerWord) != 0 || curNode->next != NULL) {
+            curNode = curNode->next;
+        }
+
+        curNode->next = newNode;
+    }
         table[index]
     return false;
 }
