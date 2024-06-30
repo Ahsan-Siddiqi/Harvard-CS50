@@ -141,8 +141,8 @@ unsigned int size(void)
 {
     // TODO
     unsigned int words = 0;
-    
-    for (int i = 0; i < sizeof(table); i++) {
+
+    for (int i = 0; i < N; i++) {
         node *curNode = table[i];
 
         if (curNode != NULL) words++;
@@ -162,7 +162,7 @@ bool unload(void)
     // TODO
     node *prevNode;
 
-    for (int i = 0; i < sizeof(table); i++) {
+    for (int i = 0; i < N; i++) {
         node *curNode = table[i];
 
         while (curNode->next != NULL) {
@@ -171,7 +171,7 @@ bool unload(void)
             curNode = curNode->next;
         }
 
-        free(curNode);
+        if (curNode != NULL) free(curNode);
         if (table[i]->next != NULL) free(table[i]);
     }
 
