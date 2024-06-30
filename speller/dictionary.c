@@ -51,7 +51,7 @@ bool load(const char *dictionary)
 
     char word[LENGTH + 1];
     char c;
-    int index;
+    int index = 0;
 
     while (fread(&c, sizeof(char), 1, dict)) {
         if (isalpha(c) || (c == '\'' && index > 0))
