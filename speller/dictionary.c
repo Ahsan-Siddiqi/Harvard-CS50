@@ -30,7 +30,7 @@ bool check(const char *word)
     for (int i = 0; i < strlen(word); i++) {
         lowerWord[i] = tolower(word[i]);
     }
-    lowerWord[strlen(lowerWord)] = '\0';
+    lowerWord[strlen(word)] = '\0';
 
 
     unsigned int index = hash(lowerWord);
@@ -46,7 +46,7 @@ bool check(const char *word)
 
             if (strcmp(lowerWord, curNode->word) == 0) return true;
 
-            printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
+            //printf("lowerWord: %s\ncurnode->word: %s\n", lowerWord, curNode->word);
 
             curNode = curNode->next;
         }
