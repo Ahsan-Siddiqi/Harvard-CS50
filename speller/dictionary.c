@@ -140,7 +140,8 @@ bool load(const char *dictionary)
 unsigned int size(void)
 {
     // TODO
-    unsigned int words;
+    unsigned int words = 0;
+    
     for (int i = 0; i < sizeof(table); i++) {
         node *curNode = table[i];
 
