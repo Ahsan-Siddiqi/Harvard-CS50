@@ -1,5 +1,3 @@
-// Implements a dictionary's functionality
-
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
@@ -15,24 +13,15 @@ typedef struct node
     struct node *next;
 } node;
 
-// TODO: Choose number of buckets in hash table
+// Number of buckets in hash table
 const unsigned int N = 1000;
 
 // Hash table
 node *table[N];
 
-// Returns true if word is in dictionary, else false
-// search function
-bool check(const char *word)
-{
-    // TODO
-    return false;
-}
-
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
     unsigned long hash = 5381;
     int c;
 
@@ -44,24 +33,46 @@ unsigned int hash(const char *word)
     return hash % N;
 }
 
+// Returns true if word is in dictionary, else false
+bool check(const char *word)
+{
+    // Get hash index
+    unsigned int hashIndex = hash(word);
+
+    // Traverse linked list at that index
+    node *curNode = table[hashIndex];
+    while (curNode != NULL)
+    {
+        if (strcasecmp(curNode->word, word) == 0)
+        {
+            return true;
+        }
+        curNode = curNode->next;
+    }
+
+    return false;
+}
+
 // Loads dictionary into memory, returning true if successful, else false
-// insert function
 bool load(const char *dictionary)
 {
-
-    for (int i = 0; i < N; i++) {
+    // Initialize hash table
+    for (int i = 0; i < N; i++)
+    {
         table[i] = NULL;
     }
 
     FILE *dict = fopen(dictionary, "r");
-
-    if (dict == NULL) return false;
+    if (dict == NULL)
+    {
+        return false;
+    }
 
     char word[LENGTH + 1];
-    char c;
     int index = 0;
-
-    while (fread(&c, sizeof(char), 1, dict)) {
+    char c;
+    while (fread(&c, sizeof(char), 1, dict))
+    {
         if (isalpha(c) || (c == '\'' && index > 0))
         {
             // Append character to word
@@ -73,26 +84,64 @@ bool load(const char *dictionary)
             // Terminate current word
             word[index] = '\0';
 
-            //insert word
+            // Create a new node for each word
             node *newNode = malloc(sizeof(node));
+            if (newNode == NULL)
+            {
+                return false;
+            }
             strcpy(newNode->word, word);
             newNode->next = NULL;
 
+            // Get hash index
             unsigned int hashIndex = hash(word);
-            if (table[hashIndex] == NULL) {
+
+            // Insert node into hash table (FIFO)
+            if (table[hashIndex] == NULL)
+            {
                 table[hashIndex] = newNode;
-            } else {
-                node *curNode = table[hashIndex]->next;
-                if (curNode != NULL) {
-                    while (curNode->next != NULL) {
-                        curNode = curNode->next;
-                    }
+            }
+            else
+            {
+                node *curNode = table[hashIndex];
+                while (curNode->next != NULL)
+                {
+                    curNode = curNode->next;
                 }
                 curNode->next = newNode;
             }
 
             // Prepare for next word
             index = 0;
+        }
+    }
+
+    // Handle the last word if the file does not end with a non-alphabetic character
+    if (index > 0)
+    {
+        word[index] = '\0';
+        node *newNode = malloc(sizeof(node));
+        if (newNode == NULL)
+        {
+            return false;
+        }
+        strcpy(newNode->word, word);
+        newNode->next = NULL;
+
+        unsigned int hashIndex = hash(word);
+
+        if (table[hashIndex] == NULL)
+        {
+            table[hashIndex] = newNode;
+        }
+        else
+        {
+            node *curNode = table[hashIndex];
+            while (curNode->next != NULL)
+            {
+                curNode = curNode->next;
+            }
+            curNode->next = newNode;
         }
     }
 
@@ -103,14 +152,31 @@ bool load(const char *dictionary)
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
 unsigned int size(void)
 {
-    // TODO
-    return 0;
+    unsigned int wordCount = 0;
+    for (int i = 0; i < N; i++)
+    {
+        node *curNode = table[i];
+        while (curNode != NULL)
+        {
+            wordCount++;
+            curNode = curNode->next;
+        }
+    }
+    return wordCount;
 }
 
 // Unloads dictionary from memory, returning true if successful, else false
-// delete function
 bool unload(void)
 {
-    // TODO
-    return false;
+    for (int i = 0; i < N; i++)
+    {
+        node *curNode = table[i];
+        while (curNode != NULL)
+        {
+            node *tmp = curNode;
+            curNode = curNode->next;
+            free(tmp);
+        }
+    }
+    return true;
 }
