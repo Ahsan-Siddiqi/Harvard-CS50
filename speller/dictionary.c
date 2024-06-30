@@ -58,6 +58,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+    printf("word: %s\n", word);
     unsigned long hash = 5381;
     int c;
 
@@ -65,7 +66,7 @@ unsigned int hash(const char *word)
     {
         hash = ((hash << 5) + hash) + tolower(c); // hash * 33 + c
     }
-    printf("word: %s - hash: %lu\n", word, hash % N);
+    //printf("word: %s - hash: %lu\n", word, hash % N);
 
     return hash % N;
 }
