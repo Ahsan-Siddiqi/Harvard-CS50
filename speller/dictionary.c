@@ -69,13 +69,16 @@ bool load(const char *dictionary)
             node *newNode = malloc(sizeof(node));
             strcpy(newNode->word, word);
             newNode->next = NULL;
+
             unsigned int hashIndex = hash(word);
             if (table[hashIndex] == NULL) {
                 table[hashIndex] = newNode;
             } else {
                 node *curNode = table[hashIndex]->next;
-                while (curNode->next != NULL) {
-                    curNode = curNode->next;
+                if (curNode != NULL) {
+                    while (curNode->next != NULL) {
+                        curNode = curNode->next;
+                    }
                 }
                 curNode->next = newNode;
             }
