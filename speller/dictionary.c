@@ -30,7 +30,7 @@ bool check(const char *word)
     for (int i = 0; i < strlen(word); i++) {
         lowerWord[i] = tolower(word[i]);
     }
-    lowerWord
+    lowerWord[strlen(word) + 1 ] = '\0';
 
     unsigned int index = hash(lowerWord);
     if (strcmp(lowerWord, table[index]->word) == 0) {
