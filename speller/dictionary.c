@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
@@ -48,7 +49,7 @@ bool load(const char *dictionary)
 
     if (dict == NULL) return false;
 
-    char* word[LENGTH + 1];
+    char word[LENGTH + 1];
     char c;
     int index;
 
