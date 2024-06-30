@@ -26,10 +26,11 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    char lowerWord[strlen(word)];
+    char lowerWord[strlen(word) + 1];
     for (int i = 0; i < strlen(word); i++) {
         lowerWord[i] = tolower(word[i]);
     }
+    lowerWord
 
     unsigned int index = hash(lowerWord);
     if (strcmp(lowerWord, table[index]->word) == 0) {
