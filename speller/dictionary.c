@@ -71,7 +71,7 @@ bool load(const char *dictionary)
             newNode->next = NULL;
             unsigned int hashIndex = hash(word);
             if (table[hashIndex] == NULL) {
-                table[hash(word)] = newNode;
+                table[hashIndex] = newNode;
             } else {
                 node *curNode = table[hashIndex]->next;
                 while (curNode->next != NULL) {
