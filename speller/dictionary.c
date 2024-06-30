@@ -26,7 +26,10 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    unsigned int i
+    char *lowerword = tolower
+    unsigned int index = hash(word);
+    if
+        table[index]
     return false;
 }
 
