@@ -160,19 +160,13 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    node *prevNode;
 
     for (int i = 0; i < N; i++) {
-        node *curNode = table[i];
-
-        while (curNode->next != NULL) {
-            prevNode = curNode;
-            free(prevNode);
-            curNode = curNode->next;
+        while (table[i] != NULL) {
+            node *temp = table[i];
+            table[i] = table[i]->next;
+            free(temp);
         }
-
-        if (curNode != NULL) free(curNode);
-        if (table[i]->next != NULL) free(table[i]);
     }
 
     return true;
