@@ -80,7 +80,7 @@ bool load(const char *dictionary)
             {
                 return false;
             }
-            
+
             strcpy(newNode->word, word);
             newNode->next = NULL;
 
@@ -88,11 +88,10 @@ bool load(const char *dictionary)
             if (table[hashIndex] == NULL) {
                 table[hashIndex] = newNode;
             } else {
-                node *curNode = table[hashIndex]->next;
-                if (curNode != NULL) {
-                    while (curNode->next != NULL) {
-                        curNode = curNode->next;
-                    }
+                node *curNode = table[hashIndex];
+
+                while (curNode->next != NULL) {
+                    curNode = curNode->next;
                 }
                 curNode->next = newNode;
             }
