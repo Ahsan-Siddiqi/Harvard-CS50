@@ -108,6 +108,7 @@ bool load(const char *dictionary)
 
             if (newNode == NULL)
             {
+                fclose(dict);
                 return false;
             }
 
