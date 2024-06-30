@@ -44,7 +44,7 @@ bool load(const char *dictionary)
         table[i] = NULL;
     }
 
-    FILE *dict = fopen(dictionary, 'r');
+    FILE *dict = fopen(dictionary, "r");
 
     if (dict == NULL) return false;
 
@@ -84,8 +84,8 @@ bool load(const char *dictionary)
         }
     }
 
-
-    return false;
+    fclose(dict);
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
