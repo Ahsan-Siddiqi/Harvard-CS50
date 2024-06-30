@@ -60,18 +60,14 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    // TODO: Improve this hash function
-    //printf("word: %s", word);
-    unsigned long hash = 5381;
-    int c;
-
-    while ((c = *word++))
+    unsigned long hash = 0;
+    int len = strlen(word);
+    for (int i = 0; i < len; i++)
     {
-        hash = ((hash << 5) + hash) + tolower(c); // hash * 33 + c
+        hash = (hash * 31 + tolower(word[i])) % N;
+        hash = (hash * 17 + (unsigned char)(tolower(word[i]) * tolower(word[(i+1) % len]))) % N;
     }
-    //printf(" - hash: %lu\n", hash % N);
-
-    return hash % N;
+    return (unsigned int)hash;
 }
 
 // Loads dictionary into memory, returning true if successful, else false
