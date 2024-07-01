@@ -1,10 +1,10 @@
 
 
-
-while(True):
+while (True):
     try:
         height = int(input("Height: "))
-        if height in range(1, 9): break
+        if height in range(1, 9):
+            break
     except ValueError:
         continue
 
