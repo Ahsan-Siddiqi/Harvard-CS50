@@ -31,13 +31,12 @@ def main():
     # TODO: Check database for matching profiles
     for row in csvRows:
         for str, n in row.items():
-            try:
+            if str != 'name':
                 print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
-                if str(n) == str(longest[str]):
+                if int(n) == int(longest[str]):
                     print(row['name'])
                     return
-            except:
-                continue
+
     print("No Match")
     return
 
