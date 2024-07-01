@@ -1,8 +1,10 @@
 height = input("Height: ")
 
-for i in len(height):
-    for j in height:
-        if j < height - i:
+length = len(height)
+
+for i in range(length):
+    for j in range(length):
+        if j < length - i:
             print(" ", end='')
         else:
             print("#", end='')
