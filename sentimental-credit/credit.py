@@ -17,3 +17,7 @@ patterns = {
     'Discover': r'^6(011|5\d{2}|4[4-9]\d)\d{12}$'
 }
 
+reverse = card[::-1]
+
+for i, num in enumerate(reverse):
+    
