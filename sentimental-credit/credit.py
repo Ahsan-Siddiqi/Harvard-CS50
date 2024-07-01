@@ -2,7 +2,7 @@ import re
 
 while(True):
     try:
-        card = int(input("Number "))
+        card = int(input("Number: "))
         if card is isinstance(card, int):
             break
     except ValueError:
@@ -27,7 +27,7 @@ for i, num in enumerate(reverse):
             n-= 9
     total += n
 
-if total % 10 is not 0:
+if total % 10 != 0:
     print("INVALID")
     exit()
 
