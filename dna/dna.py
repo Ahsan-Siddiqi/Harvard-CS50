@@ -36,14 +36,16 @@ def main():
             if str != 'name':
                 print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) == int(longest[str]):
-                    matches[row['name']] += 1
+                    matches[row['name']] = 1
 
 
     if not matches:
         print("No Match")
     else:
-        max_keys = [key for key, value in matches.items() if value == max(matches.values())]
-        print()
+       for key, value in matches.items():
+            if value == max(matches.values()):
+                print(key)
+                return
 
     return
 
