@@ -20,7 +20,7 @@ def main():
 
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as input:
-        inputSequence = input.read()
+        inputSequence = input.read().strip()
 
     # TODO: Find longest match of each STR in DNA sequence
     strs = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
