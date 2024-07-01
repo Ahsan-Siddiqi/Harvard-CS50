@@ -32,7 +32,7 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             if n == strs[str]:
-                print(row[name])
+                print(row['name'])
     return
 
 
