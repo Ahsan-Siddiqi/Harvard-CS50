@@ -10,4 +10,4 @@ while(True):
 
 str(card)
 
-card.
+re.search("", card)
