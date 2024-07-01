@@ -32,8 +32,8 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             try:
-                #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
-                if int(n) == int(longest[str]):
+                print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
+                if str(n) == str(longest[str]):
                     print(row['name'])
                     return
             except:
