@@ -18,6 +18,7 @@ patterns = {
 }
 
 reverse = card[::-1]
+total = 0
 
 for i, num in enumerate(reverse):
     n = int(num)
@@ -26,4 +27,7 @@ for i, num in enumerate(reverse):
         if n > 9:
             n-= 9
     total += n
-    
+
+if total % 10 is not 0:
+    print("INVALID")
+
