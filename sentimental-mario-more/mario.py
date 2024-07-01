@@ -1,6 +1,6 @@
 height = int(input("Height: "))
 
-while((height > 8 or height < 1) and not isinstance(height, int)):
+while(height not in range(8)):
     height = int(input("Height: "))
 
 for i in range(height):
