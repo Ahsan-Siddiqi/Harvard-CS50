@@ -1,4 +1,6 @@
-height = int(input("Height: "))
+Try:
+    height = int(input("Height: "))
+
 
 while(height not in range(1, 9)):
     height = int(input("Height: "))
