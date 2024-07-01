@@ -2,16 +2,19 @@ text = input("Text: ")
 
 # compute L and S
 punc = ["!", ".", "?"]
-sentances = 0
+sentences = 0
 chars = 0
 
 for char in text:
     if char in punc:
         sentances += 1
-    chars += 1
+    if char.isalpha():
+        chars += 1
 
-L = chars / 100
-S = sentances / 100
+words = len(text.split())
+
+L = (chars / words) * 100
+S = (sentences / words) * 100
 
 # compute index
 index = 0.0588 * L - 0.296 * S - 15.8
