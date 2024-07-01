@@ -7,7 +7,7 @@ chars = 0
 
 for char in text:
     if char in punc:
-        sentances += 1
+        sentences += 1
     if char.isalpha():
         chars += 1
 
@@ -25,4 +25,4 @@ if index < 1:
 elif index >= 16:
     print("Grade 16+")
 else:
-    print("Grade " + index)
+    print(f"Grade {index}" )
