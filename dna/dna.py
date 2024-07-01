@@ -23,7 +23,9 @@ def main():
         inputSequence = input.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    longest = longest_match(inputSequence, )
+    strs = ["AGATC", "TTTTTTCT", "AATG", "TCTAG", "GATA", "TATC", "GAAA", "TCTG"]
+    for str in strs:
+        str = longest_match(inputSequence, str)
 
     # TODO: Check database for matching profiles
     for row in rows:
