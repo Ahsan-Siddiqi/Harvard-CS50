@@ -1,5 +1,7 @@
 height = input("Height: ")
 
+num = height
+
 for i in height:
     for j in height:
-        print("#")
+        num += 1
