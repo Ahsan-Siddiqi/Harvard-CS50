@@ -10,4 +10,4 @@ while(True):
 
 str(card)
 
-re.search("", card)
+re.search("[]", card)
