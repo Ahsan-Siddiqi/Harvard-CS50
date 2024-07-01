@@ -20,4 +20,8 @@ patterns = {
 reverse = card[::-1]
 
 for i, num in enumerate(reverse):
-    
+    n = int(num)
+    if i % 2 == 1:
+        n *= 2
+        if n > 9:
+            n-= 9
