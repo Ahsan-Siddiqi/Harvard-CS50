@@ -32,11 +32,11 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             try:
-                print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
-                if n == longest[str]:
+                #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
+                if int(n) == int(longest[str]):
                     print(row['name'])
                     return
-            except KeyError:
+            except:
                 continue
     print("No Match")
     return
