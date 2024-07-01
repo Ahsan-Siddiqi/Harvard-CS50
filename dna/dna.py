@@ -34,7 +34,11 @@ def main():
             if str != 'name':
                 #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) == int(longest[str]):
-
+                    match = True
+                else:
+                    match = False
+        if match:
+            print(row['name'])
 
     print("No Match")
 
