@@ -1,6 +1,6 @@
 import re
 
-while(True):
+while (True):
     try:
         card = int(input("Number: "))
         if card is not isinstance(card, int):
@@ -24,7 +24,7 @@ for i, num in enumerate(reverse):
     if i % 2 == 1:
         n *= 2
         if n > 9:
-            n-= 9
+            n -= 9
     total += n
 
 if total % 10 != 0:
