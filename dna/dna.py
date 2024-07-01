@@ -3,6 +3,7 @@ import sys
 
 
 def main():
+    matches = 0
 
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
@@ -34,10 +35,10 @@ def main():
             if str != 'name':
                 print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) == int(longest[str]):
-                    print(row['name'])
-                    return
-
-    print("No Match")
+                    matches += 1
+    if matches == 0:
+        print("No Match")
+    elif 
     return
 
 
