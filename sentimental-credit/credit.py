@@ -25,3 +25,5 @@ for i, num in enumerate(reverse):
         n *= 2
         if n > 9:
             n-= 9
+    total += n
+    
