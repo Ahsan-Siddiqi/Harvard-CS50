@@ -10,9 +10,11 @@ def main():
         exit()
 
     # TODO: Read database file into a variable
-    data = open(sys.argv[1], "r")
+    with open(sys.argv[1]) as data:
+        reader = csv.DiscReader(data)
+        
 
-    
+
     # TODO: Read DNA sequence file into a variable
 
     # TODO: Find longest match of each STR in DNA sequence
