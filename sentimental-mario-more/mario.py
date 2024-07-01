@@ -1,15 +1,13 @@
-height = input("Height: ")
+height = int(input("Height: "))
 
-length = len(height)
-
-for i in range(length):
-    for j in range(length):
-        if j < length - i:
+for i in range(height):
+    for j in range(height):
+        if j < height - i:
             print(" ", end='')
         else:
             print("#", end='')
 
-    print(" ", end='')
+    print("  ", end='')
 
     for k in range(i):
         print("#", end='')
