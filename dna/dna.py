@@ -30,7 +30,7 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in rows:
-        for str, n in row:
+        for str, n in row.items():
             
     return
 
