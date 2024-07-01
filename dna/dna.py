@@ -30,13 +30,13 @@ def main():
 
     # TODO: Check database for matching profiles
     for row in csvRows:
+        match = True
         for str, n in row.items():
             if str != 'name':
                 #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
-                if int(n) == int(longest[str]):
-                    match = True
-                else:
+                if int(n) != int(longest[str]):
                     match = False
+                    
         if match:
             print(row['name'])
             return
