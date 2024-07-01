@@ -32,4 +32,5 @@ if total % 10 is not 0:
     print("INVALID")
     exit()
 
-
+for type, pattern in patterns.items():
+    if re.match(pattern, card)
