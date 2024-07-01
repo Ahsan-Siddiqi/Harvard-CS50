@@ -44,6 +44,7 @@ def main():
     if not matches:
         print("No Match")
     else:
+       print(matches)
        for key, value in matches.items():
             if value == max(matches.values()):
                 print(key)
