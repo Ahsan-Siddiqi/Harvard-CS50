@@ -1,7 +1,12 @@
 import re
 
-try:
-    card = int(input("Number "))
-except ValueError:
-    print("INVALID")
+while(True):
+    try:
+        card = int(input("Number "))
+        if card is isinstance(card, int):
+            break
+    except ValueError:
+        continue
+
+
 
