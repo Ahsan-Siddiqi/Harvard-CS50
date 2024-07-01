@@ -31,7 +31,8 @@ def main():
     # TODO: Check database for matching profiles
     for row in csvRows:
         for str, n in row.items():
-            if n == strs[str]
+            if n == strs[str]:
+                print(row[name])
     return
 
 
