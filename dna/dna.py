@@ -24,8 +24,8 @@ def main():
         inputSequence = input.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    for i in 
-
+    for row in rows:
+        for 
     # TODO: Check database for matching profiles
 
     return
