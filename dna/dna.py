@@ -39,6 +39,7 @@ def main():
                     match = False
         if match:
             print(row['name'])
+            return
 
     print("No Match")
 
