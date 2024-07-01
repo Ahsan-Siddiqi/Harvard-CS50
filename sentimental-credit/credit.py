@@ -8,5 +8,6 @@ while(True):
     except ValueError:
         continue
 
+str(card)
 
-
+card.
