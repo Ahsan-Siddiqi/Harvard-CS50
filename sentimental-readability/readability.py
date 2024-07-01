@@ -2,7 +2,8 @@ text = input("Text: ")
 
 # compute L and S
 punc = ["!", ".", "?"]
-sentances, chars = 0
+sentances = 0
+chars = 0
 
 for char in text:
     if char in punc:
