@@ -30,4 +30,6 @@ for i, num in enumerate(reverse):
 
 if total % 10 is not 0:
     print("INVALID")
+    exit()
+
 
