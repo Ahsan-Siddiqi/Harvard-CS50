@@ -39,9 +39,10 @@ def main():
                     matches[row['name']] += 1
 
 
-    if matches == 0:
+    if not matches:
         print("No Match")
     else:
+        max_keys = [key for key, value in my_dict.items() if value == max(matches.values())]
         print()
 
     return
