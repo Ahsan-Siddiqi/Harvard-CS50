@@ -32,7 +32,7 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             try:
-                print(f"STR: {str}, n: {n}, Longest: {longest[str]}")
+                print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if n == longest[str]:
                     print(row['name'])
                     return
