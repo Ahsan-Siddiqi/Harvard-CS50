@@ -31,6 +31,7 @@ def main():
     # TODO: Check database for matching profiles
     for row in csvRows:
         for str, n in row.items():
+            print(f"STR: {str}, n: {n}")
             try:
                 if n == longest[str]:
                     print(row['name'])
