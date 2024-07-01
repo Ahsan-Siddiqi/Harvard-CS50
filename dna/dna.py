@@ -4,8 +4,6 @@ import sys
 
 def main():
 
-    matches = {}
-
     # TODO: Check for command-line usage
     if len(sys.argv) != 3:
         print("Usage: python dna.py filename.csv filename.txt")
@@ -34,21 +32,11 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             if str != 'name':
-                print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
+                #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) == int(longest[str]):
-                    if row['name'] in matches:
-                        matches[row['name']] += 1
-                    else:
-                        matches[row['name']] = 1
 
-    if not matches:
-        print("No Match")
-    else:
-       print(matches)
-       for key, value in matches.items():
-            if value == max(matches.values()):
-                print(key)
-                return
+
+    print("No Match")
 
     return
 
