@@ -34,7 +34,7 @@ def main():
     for row in csvRows:
         for str, n in row.items():
             if str != 'name':
-                #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
+                print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) == int(longest[str]):
                     if row['name'] in matches:
                         matches[row['name']] += 1
