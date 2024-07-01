@@ -11,10 +11,10 @@ while(True):
 str(card)
 
 patterns = {
-    'Visa': r'^4\d{12}(\d{3})?$',
-    'MasterCard': r'^5[1-5]\d{14}$|^2(22[1-9]|2[3-9]\d|[3-6]\d{2}|7([01]\d|20))\d{12}$',
-    'American Express': r'^3[47]\d{13}$',
-    'Discover': r'^6(011|5\d{2}|4[4-9]\d)\d{12}$'
+    'VISA': r'^4\d{12}(\d{3})?$',
+    'MASTERCARD': r'^5[1-5]\d{14}$|^2(22[1-9]|2[3-9]\d|[3-6]\d{2}|7([01]\d|20))\d{12}$',
+    'AMERICAN EXPRESS': r'^3[47]\d{13}$',
+    'DISCOVER': r'^6(011|5\d{2}|4[4-9]\d)\d{12}$'
 }
 
 reverse = card[::-1]
