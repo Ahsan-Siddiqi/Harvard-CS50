@@ -1,10 +1,12 @@
-try:
-    height = int(input("Height: "))
-except ValueError:
-    
 
-while(height not in range(1, 9)):
-    height = int(input("Height: "))
+
+
+while(True):
+    try:
+        height = int(input("Height: "))
+        if height in range(1, 9): break
+    except ValueError:
+        continue
 
 for i in range(height):
     for j in range(height):
