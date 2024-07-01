@@ -17,7 +17,6 @@ def main():
         for row in reader:
             csvRows.append(row)
 
-
     # TODO: Read DNA sequence file into a variable
     with open(sys.argv[2]) as input:
         inputSequence = input.read().strip()
@@ -33,10 +32,10 @@ def main():
         match = True
         for str, n in row.items():
             if str != 'name':
-                #print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
+                # print(f"STR: {str}, n: {n}, Longest: {longest[str]}, name: {row['name']}")
                 if int(n) != int(longest[str]):
                     match = False
-                    
+
         if match:
             print(row['name'])
             return
