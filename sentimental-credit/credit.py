@@ -8,7 +8,7 @@ while(True):
     except ValueError:
         continue
 
-str(card)
+card = str(card)
 
 patterns = {
     'VISA': r'^4\d{12}(\d{3})?$',
