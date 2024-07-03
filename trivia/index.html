@@ -14,10 +14,11 @@
                 document.querySelector('#correctFeedback').innerHTML = 'Correct!';
 
                 // when incorrect clicked, change color to red
-                let incorrect = document.querySelector('.incorrect');
-                correct.style.backgroundColor = 'red';
-                document.querySelector('#incorrectFeedback').innerHTML = 'Incorrect!';
-
+                let incorrect = document.querySelectorAll('.incorrect');
+                for (let i = 0; i < incorrect.length; i++) {
+                    incorrect[i].style.backgroundColor = 'red';
+                    document.querySelector('#incorrectFeedback').innerHTML = 'Incorrect!';
+                }
             }
         </script>
     </head>
