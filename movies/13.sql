@@ -1,1 +1,1 @@
-SELECT name FROM people WHERE id IN (SELECT people_id FROM stars WHERE )
+SELECT name FROM people WHERE id IN (SELECT people_id FROM stars WHERE movie_id )
