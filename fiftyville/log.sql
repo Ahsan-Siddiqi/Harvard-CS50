@@ -1,7 +1,7 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
 --find earlist flight the day after
-SELECT id FROM flights WHERE year = 2023 AND day = 29 ORDER BY hour ASC
+SELECT id FROM flights WHERE year = 2023 AND day = 29 ORDER BY hour ASC, minute ASC;
 
 --using the flight id, license plate from the security, and the phone number the day of which was less that one minute long get a list of suspects
 SELECT name FROM people WHERE passport_number IN (
