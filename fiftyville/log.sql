@@ -1,5 +1,6 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
+--using the flight id, license plate from the security, and the phone number the day of which was less that one minute long get a list of suspects
 SELECT name FROM people WHERE passport_number IN (
     SELECT passport_number FROM passengers WHERE flight_id = 36)
     AND license_plate IN (
