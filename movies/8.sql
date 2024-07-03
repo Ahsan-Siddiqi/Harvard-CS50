@@ -1,1 +1,1 @@
-SELECT person_id FROM people WHERE
+SELECT name FROM people WHERE title = "Toy Story"(SELECT movie_id FROM stars)
