@@ -19,4 +19,4 @@ SELECT name FROM people WHERE id IN (
         SELECT account_number FROM atm_transactions WHERE year = 2023 AND month = 7 AND day = 28 AND transaction_type = "withdraw" AND atm_location = "Leggett Street"));
 
 --who was bruce talking to?
-
+SELECT name FROM people WHERE phone_number IN (SELECT caller FROM phone_calls WHERE year = 2023 AND day = 28 AND month = 7 AND duration < 60);
