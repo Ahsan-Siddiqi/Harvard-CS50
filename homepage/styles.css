@@ -4,13 +4,8 @@
     align-items: center;
     justify-content: center;
     font-family: 'Aleo';
+    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa2Rxb21xbWlwa283M2doaTdlMjBhb3M0emRmMGU4eWV5N2xqZnhtaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ko7twHhomhk8E/giphy.webp');
+    background-size: cover;
+    background-position: center;
 }
 
-#bg-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    object-fit: cover;
-}
