@@ -1,10 +1,8 @@
-h1 {
-    text-align: center;
-}
-
 .first-slide {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+
