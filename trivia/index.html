@@ -28,7 +28,11 @@
                 document.querySelector('#submit').addEventListener('click', function() {
                     let input = document.querySelector('input');
                     if (input.value === 'the United Kingdom of Great Britain and Northern Ireland') {
-                        input.style.backgroudColor = 'green'
+                        input.style.backgroudColor = 'green';
+                        input.parentElement.querySelector('.feedback2').innerHTML = 'Correct!';
+                    } else {
+                        input.style.backgroundColor = 'red';
+                        input.parentElement.querySelector('.feedback').innerHTML = 'Incorrect!';
                     }
                 })
             });
