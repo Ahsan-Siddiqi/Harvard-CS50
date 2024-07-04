@@ -24,9 +24,13 @@
                     });
                 }
 
-                // when correct answer given
-                let correct2 = document.querySelector('.submit');
-                
+                // check free response
+                document.querySelector('#submit').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value === 'Switzerland') {
+                        input.style.backgroudColor = 'green'
+                    }
+                })
             });
         </script>
     </head>
