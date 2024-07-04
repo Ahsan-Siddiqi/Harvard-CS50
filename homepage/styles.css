@@ -3,7 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Aleo'
+    font-family: 'Aleo';
+    background-image: url('https://media.giphy.com/media/wwg1suUiTbCY8H8vIA/giphy.gif');
+    background-size: cover;
+    background-position: center;
 }
 
 
