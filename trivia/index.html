@@ -12,7 +12,7 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', fucntion() {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector('#correctFeedback').innerHTML = 'Correct!';
+                    document.querySelector('#feedback1').innerHTML = 'Correct!';
                 });
 
                 // when incorrect clicked, change color to red
@@ -20,7 +20,7 @@
                 for (let i = 0; i < incorrect.length; i++) {
                     incorrect[i].addEventListener('click', function() {
                         incorrect[i].style.backgroundColor = 'red';
-                        document.querySelector('#incorrectFeedback').innerHTML = 'Incorrect!';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect!';
                     });
                 }
             }
@@ -41,6 +41,9 @@
                 <button class="correct"> Finland, Denmark, Iceland</button>
                 <button class="incorrect"> Finland, Iceland, Denmark</button>
                 <button class="incorrect"> Switzerland, New Zealand, Iceland</button>
+
+                <p id="feedback1"></p>
+
             </div>
 
             <div class="section">
