@@ -1,5 +1,8 @@
 .first-slide {
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: 'Aleo';
     background-image: url('https://i.seadn.io/gae/_YIoKz_EmInCKgtGbJzUSpn8Liz7Mr4UIZN7aCJoCknVKkRDyWJIXe4koNnIMg84DEu4Y-32cNF5OWVnA1RuAZUotmyen_FZAe_O9Q?auto=format&dpr=1&w=1000');
     background-size: cover;
