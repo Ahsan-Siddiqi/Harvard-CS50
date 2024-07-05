@@ -23,7 +23,8 @@
 }
 
 .body-container {
-    margin: 0px 0px 0px 50vh;
+    margin: 0px 0px 0px 100vh;
+    width: 100vh;
 }
 
 .section {
