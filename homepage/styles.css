@@ -19,11 +19,12 @@
     background-size: cover;
     background-position: center;
     flex-direction: column;
-    text-align: center;
+
 }
 
 .second-slide-text {
     text-decoration-line: underline;
+    text-align: center;
 }
 
 .about-text-body {
