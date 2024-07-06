@@ -15,10 +15,11 @@
     align-items: center;
     justify-content: center;
     font-family: 'Aleo';
-    background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHBxaXFid2lidXg3c2lvZmQyYmpwb2NlcHFpbndkOHI0YjJ6am8zcCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/kiWlpxD6hXmvTL8dio/giphy.webp');
+    background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmJlM3I3NnJtc2c0dngzbXF3djk5aGs3aDlrb3Q5OWxiamlvYmJqOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPtjElfqwMOTbH2/giphy.webp');
     background-size: cover;
     background-position: center;
 }
+
 
 .about-text-body {
     font-family: 'Nunito Sans';
