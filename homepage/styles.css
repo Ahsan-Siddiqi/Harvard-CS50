@@ -27,6 +27,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     overflow: auto;
+    margin: 1px;
 }
 
 .second-slide-text {
