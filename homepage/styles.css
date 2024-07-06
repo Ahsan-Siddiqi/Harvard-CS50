@@ -20,6 +20,9 @@
     background-position: center;
 }
 
+.second-slide-text {
+    text-decoration-line: underline;
+}
 
 .about-text-body {
     font-family: 'Nunito Sans';
