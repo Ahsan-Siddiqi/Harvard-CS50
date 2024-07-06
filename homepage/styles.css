@@ -18,6 +18,8 @@
     background-image: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcmJlM3I3NnJtc2c0dngzbXF3djk5aGs3aDlrb3Q5OWxiamlvYmJqOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3oKIPtjElfqwMOTbH2/giphy.webp');
     background-size: cover;
     background-position: center;
+    flex-direction: column;
+    text-align: center;
 }
 
 .second-slide-text {
