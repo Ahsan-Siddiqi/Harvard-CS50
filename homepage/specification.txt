@@ -17,4 +17,4 @@ font-family
 background-image
 padding
 
-
+Bootstrap was used for responsive design and UI components, while JavaScript was employed to toggle the color of elements dynamically.
