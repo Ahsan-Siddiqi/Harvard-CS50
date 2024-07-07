@@ -1,0 +1,14 @@
+HTML tags:
+<link>
+<script>
+<nav>
+<div>
+<a>
+<button>
+<ul>
+<li>
+<form>
+<input>
+
+CSS properties:
+
