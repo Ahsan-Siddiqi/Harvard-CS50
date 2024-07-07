@@ -11,4 +11,10 @@ HTML tags:
 <input>
 
 CSS properties:
+height
+display
+font-family
+background-image
+padding
+
 
