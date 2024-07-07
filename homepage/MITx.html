@@ -10,7 +10,6 @@
     </head>
     <body>
 
-
         <!--Navbar-->
         <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <div class="container-fluid">
@@ -48,10 +47,31 @@
           <!--Body-->
           <div class="second-slide text-white">
 
-            <h1>Work In Progress</h1>
-            <p>Plans have been implemented to undertake the course after Cs50AI and others.</p>
+            <h1 class="color-change">Work In Progress</h1>
+            <p class="color-change">Plans have been implemented to undertake the course after Cs50AI and others.</p>
 
-        </div>
+          </div>
+
+          <script>
+              // JavaScript to toggle the color and background color of the elements
+              document.addEventListener("DOMContentLoaded", function() {
+                  const elements = document.querySelectorAll(".color-change");
+                  let isOriginalColor = true;
+
+                  setInterval(() => {
+                      elements.forEach(element => {
+                          if (isOriginalColor) {
+                              element.style.color = "#f00";
+                              element.style.backgroundColor = "#000";
+                          } else {
+                              element.style.color = "#fff";
+                              element.style.backgroundColor = "transparent";
+                          }
+                      });
+                      isOriginalColor = !isOriginalColor;
+                  }, 2000);
+              });
+          </script>
 
     </body>
 </html>
