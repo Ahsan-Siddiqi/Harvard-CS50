@@ -80,7 +80,11 @@
                     </thead>
                     <tbody>
                         <!-- TODO: Loop through the database entries to display them in this table -->
-                         {}
+                         {% for friend in friends %}
+                            <tr>
+                                <td>{{ friend.name }}</td>
+                                <td>{{ friend.month }}</td>
+                            </tr>
 
                     </tbody>
                 </table>
