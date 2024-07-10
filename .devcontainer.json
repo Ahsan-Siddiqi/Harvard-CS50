@@ -35,6 +35,10 @@
         "vsls-contrib.gitdoc"
       ],
       "settings": {
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.autopep8"
+        },
+        "breadcrumbs.enabled": false,
         "C_Cpp.autocomplete": "disabled",
         "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 100, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }",
         "C_Cpp.codeFolding": "disabled",
@@ -44,11 +48,6 @@
         "C_Cpp.enhancedColorization": "enabled",
         "C_Cpp.errorSquiggles": "disabled",
         "C_Cpp.formatting": "clangFormat",
-        "Prettier-SQL.keywordCase": "upper",
-        "[python]": {
-          "editor.defaultFormatter": "ms-python.autopep8"
-        },
-        "breadcrumbs.enabled": false,
         "cs50.watchPorts": [
           5000,
           8080,
@@ -127,9 +126,9 @@
         "html.suggest.html5": false,
         "java.configuration.runtimes": [
           {
-            "default": true,
             "name": "JavaSE-22",
-            "path": "/opt/jdk"
+            "path": "/opt/jdk",
+            "default": true
           }
         ],
         "java.debug.settings.enableRunDebugCodeLens": false,
@@ -138,6 +137,7 @@
         "javascript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": false,
         "javascript.suggest.enabled": false,
         "javascript.validate.enable": false,
+        "Prettier-SQL.keywordCase": "upper",
         "problems.decorations.enabled": false,
         "python.terminal.executeInFileDir": true,
         "remote.autoForwardPorts": true,
@@ -218,7 +218,7 @@
     8082,
     8787
   ],
-  "image": "ghcr.io/cs50/codespace:44fa8e1811fddac4b9532c9582ff10c6b4a5423a",
+  "image": "ghcr.io/cs50/codespace:97f41a0eac449e38da4a715af66eb56367e52e87",
   "mounts": [
     {
       "source": "/var/run/docker.sock",
