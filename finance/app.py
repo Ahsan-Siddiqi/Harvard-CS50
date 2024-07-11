@@ -83,7 +83,9 @@ def buy():
         date = datetime.datetime.now()
 
         db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")), info["price"], date.strftime("%c"), "buy")
-        
+
+        db.execute("UPDATE purchases (id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")))
+
         db.execute("UPDATE users SET cash = ?", cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]))
 
         return redirect("/")
