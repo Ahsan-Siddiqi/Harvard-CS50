@@ -41,6 +41,8 @@ def index():
     rows = db.execute("SELECT symbol, shares, SUM(shares) AS total_shares FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
+    lookup()
+
     total = 0
 
     for row in rows:
