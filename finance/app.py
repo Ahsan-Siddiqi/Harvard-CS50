@@ -89,7 +89,7 @@ def buy():
         if contains:
             db.execute("UPDATE purchases SET symbol = ?, shares = ? WHERE id = ?", (request.form.get("symbol")).upper(), int(request.form.get("shares")), session["user_id"])
         else:
-            db.execute("INSERT INTO purchaes (id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], request.form.get("symbol").upper(), request.form.get("shares"))
+            db.execute("INSERT INTO purchases (id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], request.form.get("symbol").upper(), request.form.get("shares"))
 
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]), session["user_id"])
