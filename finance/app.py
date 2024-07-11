@@ -47,7 +47,7 @@ def index():
 
     total += float(user[0]["cash"])
 
-    return render_template("index.html", purchases=rows, cash=user[0]["cash"], total=total)
+    return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), total=usd(total))
 
 
 @app.route("/buy", methods=["GET", "POST"])
