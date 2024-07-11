@@ -186,11 +186,11 @@ def register():
 
         # Ensure password was submitted
         elif not request.form.get("password"):
-            return apology("must provide password", 403)
+            return apology("must provide password", 400)
 
         # Ensure confirmation matches password
         elif request.form.get("password") != request.form.get("confirmation"):
-            return apology("passwords don't match", 403)
+            return apology("passwords don't match", 400)
 
         # INSERT username and password in database
         try:
@@ -198,7 +198,7 @@ def register():
                 "INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password"))
             )
         except ValueError:
-            return apology("Username Already Exists", 403)
+            return apology("Username Already Exists", 400)
 
         # Redirect user to home page
         return redirect("/")
