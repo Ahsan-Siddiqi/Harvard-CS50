@@ -7,7 +7,12 @@
 {% block main %}
     <form action="/sell" method="post">
         <div class="mb-3">
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Ticker" type="text">
+            <select class="form-select mx-auto w-auto" name="symbol">
+                <option diabled="" selected="">Symbol</option>
+                {% for symbol in symbols %}
+                    <option value="{{}}"></option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
             <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
