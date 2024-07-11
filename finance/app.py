@@ -55,7 +55,7 @@ def buy():
                 return apology("invalid number of shares", 403)
         execpt ValueErorr:
                 return apology("invalid number of shares", 403)
-    
+
         info = lookup(request.form.get("symbol"))
 
         if info == None:
