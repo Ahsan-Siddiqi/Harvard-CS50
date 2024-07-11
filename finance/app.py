@@ -55,7 +55,9 @@ def buy():
         if info == None:
             return apology("invalid symbol", 403)
 
-        cash = db.execute(SELECT cash FROM users WHERE username = )
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+
+        
 
     return apology("TODO")
 
