@@ -38,7 +38,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
-    rows = db.execute("SELECT symbol, shares, SUM(shares) AS total_shares, price, SUM(price) AS total_price FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
+    rows = db.execute("SELECT symbol, shares, SUM(shares) AS total_shares FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
     total = 0
