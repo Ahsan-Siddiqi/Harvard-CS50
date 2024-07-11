@@ -87,7 +87,7 @@ def buy():
         contains = db.execute("SELECT symbol FROM purchases WHERE symbol = ? AND id = ?", request.form.get("symbol").upper(), session["user_id"])
 
         if contains:
-            db.execute("UPDATE purchases SET symbol = ?, shares = ? WHERE id = ?", (request.form.get("symbol")).upper(), int(request.form.get("shares")), session["user_id"])
+            db.execute("UPDATE purchases SET shares = ? WHERE id = ? and symbol = ?", int(request.form.get("shares")), session["user_id"], (request.form.get("symbol")).upper())
         else:
             db.execute("INSERT INTO purchases (id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], request.form.get("symbol").upper(), request.form.get("shares"))
 
