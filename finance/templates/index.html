@@ -19,9 +19,24 @@
                 <tr>
                     <td>{{purchase["symbol"]}}</td>
                     <td>{{purchase["shares]}}</td>
-                    <td>{{purchase["price"] * purchase["shares]}}</td>
+                    <td>{{purchase["price"]}}</td>
+                    <td>{{purchase["price"] * purchase["shares"]}}</td>
                 </tr>
             {% endfor %}
         </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <th>Cash</th>
+                <th>{{cash}}</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <th>TOTAL</th>
+                <th>{{}}</th>
+            </tr>
+        </tfoot>
     </table>
 {% endblock %}
