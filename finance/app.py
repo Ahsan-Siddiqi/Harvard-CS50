@@ -246,7 +246,9 @@ def sell():
 
         date = datetime.datetime.now()
 
-        db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")), info["price"], date.strftime("%c"), "sell")
+        db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), -int(request.form.get("shares")), info["price"], date.strftime("%c"), "sell")
+
+        db.execute("UPDATE purchases SET symbol = ?, shares = ? WHERE id = ?", (request.form.get("symbol")).upper(), int(request.form.get("shares")), session["user_id"])
 
 
     else:
