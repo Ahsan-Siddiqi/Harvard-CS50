@@ -45,7 +45,7 @@ def index():
     total = 0
 
     for row in rows:
-        total += (float(row["total_price"]) * float(row["total_shares"]))
+        total += (float(lookup(row["symbol"])["price"]) * float(row["total_shares"]))
 
     total += float(user[0]["cash"])
 

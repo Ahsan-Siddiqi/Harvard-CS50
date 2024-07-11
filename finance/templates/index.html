@@ -18,9 +18,9 @@
             {% for purchase in purchases %}
                 <tr>
                     <td class="text-start">{{purchase["symbol"]}}</td>
-                    <td class="text-end">{{purchase["shares"]}}</td>
-                    <td class="text-end">{{lookup(purchase["symbol"]) | usd}}</td>
-                    <td class="text-end">{{(lookup(purchase["symbol"]) * purchase["total_shares"]) | usd}}</td>
+                    <td class="text-end">{{purchase["total_shares"]}}</td>
+                    <td class="text-end">{{lookup(purchase["symbol"])["price"] | usd}}</td>
+                    <td class="text-end">{{(lookup(purchase["symbol"])["price"] * purchase["total_shares"]) | usd}}</td>
                 </tr>
             {% endfor %}
         </tbody>
