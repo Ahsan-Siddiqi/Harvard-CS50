@@ -64,7 +64,7 @@ def buy():
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        if cash < (float(request.form.get("shares")) * info["price"]):
+        if cash < (float(request.form.get("shares")) * float(info["price"])):
             return apology("you're too broke for this", 403)
 
         date = datetime.datetime.now()
