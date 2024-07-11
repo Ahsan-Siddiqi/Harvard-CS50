@@ -17,10 +17,10 @@
         <tbody>
             {% for purchase in purchases %}
                 <tr>
-                    <td>{{purchase.symbol}}</td>
-                    <td>{{purchase.shares}}</td>
-                    <td>{{purchase.price}}</td>
-                    <td>{{purchase.date}}</td>
+                    <td>{{purchase["symbol"]}}</td>
+                    <td>{{purchase["shares]}}</td>
+                    <td>{{purchase["price"]}}</td>
+                    <td>{{purchase["date"]}}</td>
                 </tr>
             {% endfor %}
         </tbody>
