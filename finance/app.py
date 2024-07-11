@@ -99,9 +99,9 @@ def history():
     rows = db.execute("SELECT * FROM PURCHASES WHERE id = ?", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
-    date = datetime.date
+    date = datetime.datetime.now()
 
-    return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), date=)
+    return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), date=date.strftime("%c"))
 
 
 @app.route("/login", methods=["GET", "POST"])
