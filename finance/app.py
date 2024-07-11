@@ -246,6 +246,7 @@ def sell():
 
         date = datetime.datetime.now()
         info = lookup(request.form.get("symbol"))
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
         db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), -int(request.form.get("shares")), info["price"], date.strftime("%c"), "sell")
 
