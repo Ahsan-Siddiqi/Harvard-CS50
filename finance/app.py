@@ -47,9 +47,6 @@ def index():
 
     total += float(user[0]["cash"])
 
-    environment = jinja2.Environment(whatever)
-    environment.filters['helpers'] = helpers
-
     return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), total=usd(total))
 
 
