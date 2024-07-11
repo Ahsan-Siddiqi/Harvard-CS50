@@ -84,9 +84,12 @@ def buy():
 
         db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")), info["price"], date.strftime("%c"), "buy")
 
-        db.execute("UPDATE purchases (id, symbol, shares) VALUES (?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")))
+        contains = db.execute("SELECT symbol FROM purchases WHERE EXISTS)
 
-        db.execute("UPDATE users WHERE id = ? SET cash = ? ", session["user_id"], cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]))
+        if
+        db.execute("UPDATE purchases SET id = ?, symbol = ?, shares = ? WHERE id = ?", (request.form.get("symbol")).upper(), int(request.form.get("shares")), session["user_id"])
+
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]), session["user_id"])
 
         return redirect("/")
 
