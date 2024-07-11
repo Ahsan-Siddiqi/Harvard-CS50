@@ -53,8 +53,8 @@ def buy():
         try:
             if int(request.form.get("shares")) < 1:
                 return apology("invalid number of shares", 403)
-        except ValueErorr:
-                return apology("must enter number of shares", 403)
+        except ValueError:
+                return apology("invalid number of shares", 403)
 
         info = lookup(request.form.get("symbol"))
 
