@@ -200,6 +200,9 @@ def register():
         except ValueError:
             return apology("Username Already Exists", 400)
 
+        # Remember which user has logged in
+        session["user_id"] = rows[0]["id"]
+
         # Redirect user to home page
         return redirect("/")
 
