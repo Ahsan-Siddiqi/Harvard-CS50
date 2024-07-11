@@ -88,7 +88,7 @@ def buy():
 
         return redirect("/")
 
-    elif request.method == "GET":
+    else:
         return render_template("buy.html")
 
 
@@ -168,7 +168,7 @@ def quote():
 
         return render_template("quoted.html", symbol=info["symbol"], price=info["price"])
 
-    elif request.method == "GET":
+    else:
         return render_template("quote.html")
 
 
@@ -220,4 +220,8 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-    return apology("TODO")
+    if request.method = "POST":
+        
+
+    else:
+        return render_template("sell.html")
