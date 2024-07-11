@@ -131,9 +131,12 @@ def register():
             return apology("passwords don't match", 403)
 
         # INSERT username in database
-        rows = db.execute(
-            "INSERT INTO users ", request.form.get("username")
-        )
+        try:
+            rows = db.execute(
+                "INSERT INTO users VALUES", request.form.get("username")
+            )
+        except ValueError:
+            return apology("Username Already Exists", 403)
 
         # Ensure username exists and password is correct
         if len(rows) == 1:
