@@ -225,13 +225,13 @@ def sell():
         if not request.form.get("symbol"):
             return apology("Must select a symbol", 400)
 
-        if not request.form.get("shares") or request.form.get("shares") < 1:
+        elif not request.form.get("shares") or request.form.get("shares") < 1:
             return apology("Must enter number of shares greater than 0", 400)
 
-        owned = db.execute("SELECT SUM(shares) AS total_shares, symbol FROM purchases GROUP BY symbol")
+        owned = db.execute("SELECT SUM(shares) AS total_shares, symbol FROM purchases WHERE id = ? AND symbol = ? GROUP BY symbol", session["user_id"], request.form.get("symbol"))
 
-        if request.form.get("shares") < owned:
-
+        if request.form.get("shares") < owned[0]["total_shares"]:
+            return apology("You don't have that many shares", 400)
 
     else:
         owned = db.execute("SELECT symbol FROM purchases WHERE id = ? GROUP BY symbol", session["user_id"])
