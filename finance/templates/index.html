@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Home
+    Portfolio
 {% endblock %}
 
 {% block main %}
@@ -11,7 +11,7 @@
                 <th>Symbol</th>
                 <th>Shares</th>
                 <th>Price</th>
-                <th>Transacted</th>
+                <th>Total</th>
             </tr>
         </thead>
         <tbody>
@@ -19,8 +19,7 @@
                 <tr>
                     <td>{{purchase["symbol"]}}</td>
                     <td>{{purchase["shares]}}</td>
-                    <td>{{purchase["price"]}}</td>
-                    <td>{{purchase["date"]}}</td>
+                    <td>{{purchase["price"] * purchase["shares]}}</td>
                 </tr>
             {% endfor %}
         </tbody>
