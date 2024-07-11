@@ -95,7 +95,13 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    return apology("TODO")
+
+    rows = db.execute("SELECT * FROM PURCHASES WHERE id = ?", session["user_id"])
+    user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
+
+    date = datetime.date
+
+    return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), date=)
 
 
 @app.route("/login", methods=["GET", "POST"])
