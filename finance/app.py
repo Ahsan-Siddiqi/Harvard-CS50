@@ -72,7 +72,7 @@ def buy():
 
         date = datetime.datetime.now()
 
-        db.execute("INSERT INTO purchases (id, symbol, price, date) VALUES (?, ?, ?, ?)", session["user_id"], request.form.get("symbol"), info["price"], date.strftime("%c"))
+        db.execute("INSERT INTO purchases (id, symbol, shares, price, date) VALUES (?, ?, ?, ?, ?)", session["user_id"], request.form.get("symbol"), int(request.form.get("shares")), info["price"], date.strftime("%c"))
 
         return redirect("/")
 
