@@ -249,6 +249,8 @@ def sell():
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]), session["user_id"])
 
+        return redirect("/")
+
     else:
         owned = db.execute("SELECT symbol FROM purchases WHERE id = ? GROUP BY symbol", session["user_id"])
 
