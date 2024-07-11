@@ -58,21 +58,21 @@ def buy():
 
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide a symbol", 403)
+            return apology("must provide a symbol", 400)
 
         elif not request.form.get("shares"):
-            return apology("must provide number of shares", 403)
+            return apology("must provide number of shares", 400)
 
         try:
             if int(request.form.get("shares")) < 1:
-                return apology("invalid number of shares", 403)
+                return apology("invalid number of shares", 400)
         except ValueError:
-                return apology("invalid number of shares", 403)
+                return apology("invalid number of shares", 400)
 
         info = lookup(request.form.get("symbol"))
 
         if info == None:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol", 400)
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
@@ -158,12 +158,12 @@ def quote():
     """Get stock quote."""
     if request.method == "POST":
         if not request.form.get("symbol"):
-            return apology("must provide a symbol", 403)
+            return apology("must provide a symbol", 400)
 
         info = lookup(request.form.get("symbol"))
 
         if info == None:
-            return apology("invalid symbol", 403)
+            return apology("invalid symbol", 400)
 
         return render_template("quoted.html", symbol=info["symbol"], price=info["price"])
 
