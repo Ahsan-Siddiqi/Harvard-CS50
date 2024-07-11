@@ -97,7 +97,7 @@ def buy():
 def history():
     """Show history of transactions"""
 
-    rows = db.execute("SELECT * FROM PURCHASES WHERE id = ?", session["user_id"])
+    rows = db.execute("SELECT * FROM history WHERE id = ?", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
     return render_template("history.html", purchases=rows, cash=usd(user[0]["cash"]))
