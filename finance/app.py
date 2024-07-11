@@ -130,10 +130,10 @@ def register():
         elif request.form.get("password") != request.form.get("confirmation"):
             return apology("passwords don't match", 403)
 
-        # INSERT username in database
+        # INSERT username and password in database
         try:
             rows = db.execute(
-                "INSERT INTO users () VALUES ?", request.form.get("username")
+                "INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), 
             )
         except ValueError:
             return apology("Username Already Exists", 403)
