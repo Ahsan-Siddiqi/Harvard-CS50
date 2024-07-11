@@ -18,7 +18,7 @@
             {% for purchase in purchases %}
                 <tr>
                     <td>{{purchase["symbol"]}}</td>
-                    <td>{{purchase["shares]}}</td>
+                    <td>{{purchase["shares"]}}</td>
                     <td>{{purchase["price"]}}</td>
                     <td>{{purchase["price"] * purchase["shares"]}}</td>
                 </tr>
@@ -35,7 +35,7 @@
                 <td></td>
                 <td></td>
                 <th>TOTAL</th>
-                <th>{{}}</th>
+                <th>{{total}}</th>
             </tr>
         </tfoot>
     </table>
