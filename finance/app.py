@@ -101,7 +101,7 @@ def history():
 
     date = datetime.datetime.now()
 
-    return render_template("index.html", purchases=rows, cash=usd(user[0]["cash"]), date=date.strftime("%c"))
+    return render_template("history.html", purchases=rows, cash=usd(user[0]["cash"]), date=date.strftime("%c"))
 
 
 @app.route("/login", methods=["GET", "POST"])
