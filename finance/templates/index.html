@@ -17,10 +17,10 @@
         <tbody>
             {% for purchase in purchases %}
                 <tr>
-                    <td class="text-start">{{usd(purchase["symbol"])}}</td>
+                    <td class="text-start">{{purchase["symbol"]}}</td>
                     <td class="text-end">{{purchase["shares"]}}</td>
-                    <td class="text-end">{{purchase["price"]}}</td>
-                    <td class="text-end">{{purchase["price"] * purchase["shares"]}}</td>
+                    <td class="text-end">{{purchase["price"] | usd}}</td>
+                    <td class="text-end">{{purchase["price"] * purchase["shares"] | usd}}</td>
                 </tr>
             {% endfor %}
         </tbody>
