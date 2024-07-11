@@ -7,7 +7,22 @@
 {% block main %}
     <table>
         <thead>
-            
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Transacted</th>
+            </tr>
         </thead>
+        <tbody>
+            {% for purchase in purchases %}
+                <tr>
+                    <td>{{purchase.symbol}}</td>
+                    <td>{{purchase.shares}}</td>
+                    <td>{{purchase.price}}</td>
+                    <td>{{purchase.date}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
     </table>
 {% endblock %}
