@@ -221,7 +221,17 @@ def register():
 def sell():
     """Sell shares of stock"""
     if request.method == "POST":
-        
+
+        if not request.form.get("symbol"):
+            return apology("Must select a symbol", 400)
+
+        if not request.form.get("shares") or request.form.get("shares") < 1:
+            return apology("Must enter number of shares greater than 0", 400)
+
+        owned = db.execute("SELECT SUM(shares) AS total_shares, symbol FROM purchases GROUP BY symbol")
+
+        if request.form.get("shares") < owned:
+
 
     else:
         return render_template("sell.html")
