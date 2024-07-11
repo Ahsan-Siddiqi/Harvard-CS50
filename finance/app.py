@@ -67,7 +67,9 @@ def buy():
         if cash < (float(request.form.get("shares")) * info["price"]):
             return apology("you're too broke for this", 403)
 
-        db.execute("INSERT INTO purchases (id, symbol, price, year, month, day, time) VALUES (?,?,?,?,?,?,?)", session["user_id"], request.form.get("symbol"), info["price"], )
+        date = datetime.datetime.now()
+
+        db.execute("INSERT INTO purchases (id, symbol, price, year, month, day, time) VALUES (?,?,?,?,?,?,?)", session["user_id"], request.form.get("symbol"), info["price"], date.)
 
     elif request.method == "GET":
         return render_template("buy.html")
