@@ -234,6 +234,6 @@ def sell():
 
 
     else:
-        owned = db.execute("SELECT SUM(shares) AS total_shares, symbol FROM purchases WHERE id = ? GROUP BY symbol", session["user_id"])
+        owned = db.execute("SELECT symbol FROM purchases WHERE id = ? GROUP BY symbol", session["user_id"])
 
         return render_template("sell.html", symbols=owned)
