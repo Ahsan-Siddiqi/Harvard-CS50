@@ -247,7 +247,7 @@ def sell():
 
         db.execute("INSERT INTO purchases (symbol, shares, id) VALUES (?, ?, ?)", (request.form.get("symbol")).upper(), -int(request.form.get("shares")), session["user_id"])
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash[0]["cash"]-(float(request.form.get("shares")) * info["price"]), session["user_id"])
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", cash[0]["cash"]-(-float(request.form.get("shares")) * info["price"]), session["user_id"])
 
         return redirect("/")
 
