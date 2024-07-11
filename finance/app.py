@@ -244,6 +244,9 @@ def sell():
         if int(request.form.get("shares")) < owned[0]["total_shares"]:
             return apology("You don't have that many shares", 400)
 
+        
+
+
     else:
         owned = db.execute("SELECT symbol FROM purchases WHERE id = ? GROUP BY symbol", session["user_id"])
 
