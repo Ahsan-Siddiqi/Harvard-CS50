@@ -133,14 +133,10 @@ def register():
         # INSERT username and password in database
         try:
             rows = db.execute(
-                "INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash
+                "INSERT INTO users (username, hash) VALUES (?, ?)", request.form.get("username"), generate_password_hash(request.form.get("password"))
             )
         except ValueError:
             return apology("Username Already Exists", 403)
-
-        # Ensure username exists and password is correct
-        if len(rows) == 1:
-            return apology("invalid username", 403)
 
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
