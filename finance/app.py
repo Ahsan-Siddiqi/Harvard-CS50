@@ -200,6 +200,10 @@ def register():
         except ValueError:
             return apology("Username Already Exists", 400)
 
+        rows = db.execute(
+            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+        )
+
         # Remember which user has logged in
         session["user_id"] = rows[0]["id"]
 
