@@ -241,7 +241,7 @@ def sell():
 
         owned = db.execute("SELECT SUM(shares) AS total_shares, symbol FROM purchases WHERE id = ? AND symbol = ? GROUP BY symbol", session["user_id"], request.form.get("symbol"))
 
-        if int(request.form.get("shares")) < owned[0]["total_shares"]:
+        if int(request.form.get("shares")) > owned[0]["total_shares"]:
             return apology("You don't have that many shares", 400)
 
         date = datetime.datetime.now()
