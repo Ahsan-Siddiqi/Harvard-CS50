@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Quote
+    {{Quote}}
 {% endblock %}
 
 {% block main %}
-    <h2> {{}}</h2>
+    <h2>{{symbol}}</h2>
+    <p>Price: {{price}}</p>
 {% endblock %}
