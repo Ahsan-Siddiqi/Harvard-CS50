@@ -47,7 +47,7 @@ def buy():
         if not request.form.get("symbol"):
             return apology("must provide a symbol", 403)
 
-        elif not request.form.get("shares") or request.form.get("shares") < 1:
+        elif not request.form.get("shares") or request.form.get("shares"):
             return apology("incorrect number of shares", 403)
 
         info = lookup(request.form.get("symbol"))
@@ -57,9 +57,9 @@ def buy():
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        
 
-    return apology("TODO")
+    elif request.method == "GET":
+        return render_template("buy.html")
 
 
 @app.route("/history")
