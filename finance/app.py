@@ -63,6 +63,8 @@ def buy():
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
+        if cash < 
+
 
     elif request.method == "GET":
         return render_template("buy.html")
