@@ -245,10 +245,11 @@ def sell():
             return apology("You don't have that many shares", 400)
 
         date = datetime.datetime.now()
+        info = lookup(request.form.get("symbol"))
 
         db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), -int(request.form.get("shares")), info["price"], date.strftime("%c"), "sell")
 
-        db.execute("UPDATE purchases SET symbol = ?, shares = ? WHERE id = ?", (request.form.get("symbol")).upper(), int(request.form.get("shares")), session["user_id"])
+        db.execute("INSERT INTO purchases (symbol, shares, id) VALUES (?, ?, ?)", (request.form.get("symbol")).upper(), -int(request.form.get("shares")), session["user_id"])
 
 
     else:
