@@ -50,12 +50,12 @@ def buy():
         elif not request.form.get("shares") or request.form.get("shares") < 1:
             return apology("incorrect number of shares", 403)
 
-
-
         info = lookup(request.form.get("symbol"))
 
         if info == None:
             return apology("invalid symbol", 403)
+
+        cash = db.execute(SELECT cash FROM users WHERE username = )
 
     return apology("TODO")
 
