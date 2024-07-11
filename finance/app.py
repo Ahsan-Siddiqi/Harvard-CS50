@@ -69,7 +69,7 @@ def buy():
 
         date = datetime.datetime.now()
 
-        db.execute("INSERT INTO purchases (id, symbol, price, year, month, day, time) VALUES (?,?,?,?,?,?,?)", session["user_id"], request.form.get("symbol"), info["price"], date.)
+        db.execute("INSERT INTO purchases (id, symbol, price, date) VALUES (?, ?, ?, ?)", session["user_id"], request.form.get("symbol"), info["price"], date.strftime("%c"))
 
     elif request.method == "GET":
         return render_template("buy.html")
