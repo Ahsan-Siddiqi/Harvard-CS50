@@ -244,7 +244,9 @@ def sell():
         if int(request.form.get("shares")) < owned[0]["total_shares"]:
             return apology("You don't have that many shares", 400)
 
-        
+        date = datetime.datetime.now()
+
+        db.execute("INSERT INTO history (id, symbol, shares, price, date, type) VALUES (?, ?, ?, ?, ?, ?)", session["user_id"], (request.form.get("symbol")).upper(), int(request.form.get("shares")), info["price"], date.strftime("%c"), "sell")
 
 
     else:
