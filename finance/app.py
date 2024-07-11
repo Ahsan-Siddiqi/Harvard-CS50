@@ -14,6 +14,7 @@ app = Flask(__name__)
 
 # Custom filter
 app.jinja_env.filters["usd"] = usd
+app.jinja_env.globals.update(lookup=lookup)
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -40,8 +41,6 @@ def index():
 
     rows = db.execute("SELECT symbol, shares, SUM(shares) AS total_shares FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
-
-    lookup()
 
     total = 0
 
