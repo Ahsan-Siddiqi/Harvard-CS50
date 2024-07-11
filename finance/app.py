@@ -38,13 +38,13 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
-    rows = db.execute("SELECT symbol, shares, SUM(shares), price, SUM(price) FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
+    rows = db.execute("SELECT symbol, shares, SUM(shares) AS total_shares, price, SUM(price) AS total_price FROM PURCHASES WHERE id = ? GROUP BY symbol", session["user_id"])
     user = db.execute("SELECT * FROM users WHERE id = ?", session["user_id"])
 
     total = 0
 
     for row in rows:
-        total += (float(row["price"]) * float(row["shares"]))
+        total += (float(row["total_price"]) * float(row["total_shares"]))
 
     total += float(user[0]["cash"])
 
