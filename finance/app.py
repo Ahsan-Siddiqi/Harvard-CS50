@@ -64,12 +64,14 @@ def buy():
 
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
 
-        if cash < (float(request.form.get("shares")) * float(info["price"])):
+        if cash[0]["cash"] < (float(request.form.get("shares")) * info["price"]):
             return apology("you're too broke for this", 403)
 
         date = datetime.datetime.now()
 
         db.execute("INSERT INTO purchases (id, symbol, price, date) VALUES (?, ?, ?, ?)", session["user_id"], request.form.get("symbol"), info["price"], date.strftime("%c"))
+
+        return render_template("/")
 
     elif request.method == "GET":
         return render_template("buy.html")
