@@ -1,7 +1,0 @@
-To show a listener's audio aura, I would map the average values for energy, valence, danceability, loudness, speechiness, and length to two moods.
-While speechiness and lesser valence may indicate a reflective mood, high energy, valence, and danceability may indicate a cheerful mood.
-For many reasons, though, this approach may not be very representative of the listener.
-It simplifies complex emotions into two moods, thereby possibly excluding musical preferences.
-Second, the mean values might not capture the atmosphere of a song. Thirdly, one overlooks song context—that is, working out against resting.
-Examining song time in each category and grouping songs based on mood can help to enhance aura computation.
-Additionally personalizing and faithfully capturing the auditory aura of the listener are user comments and emotional tagging of music.
